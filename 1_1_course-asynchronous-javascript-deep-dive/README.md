@@ -1,3 +1,5 @@
+# Asynchronous Javascript Deep Dive
+
 - [Asynchronous Javascript Deep Dive](#asynchronous-javascript-deep-dive)
   - [Sync vs Async](#sync-vs-async)
     - [Sync Code](#sync-code)
@@ -7,11 +9,10 @@
       - [Adventages](#adventages-1)
       - [Disadventages](#disadventages-1)
   - [Event Loop](#event-loop)
+  - [Callback](#callback)
+    - [Problems with callbacks](#problems-with-callbacks)
   - [Glossary](#glossary)
     - [setTimeout()](#settimeout)
-    - [Callback](#callback)
-
-# Asynchronous Javascript Deep Dive
 
 ## Sync vs Async
 
@@ -22,21 +23,25 @@ Synchronous code is what is written by default. The reason being it is easy to u
 It is easy to follow. It must run in order and it blocks anything else from happening while it is running. If you write sync code and you have a heavy task computation that will take some time all the program execution will be frozen until the heavy task ends and the execution continues.
 
 #### Adventages
+
 - Easy to write and to reason about
 
 #### Disadventages
+
 - May create blocking code
 - Less performant
 
 ### Async Code
 
-In the other hand, the async code enabled the possibility of write code that don't block the main threat. Writing async code the program can make and wait many thing at the same time. 
+In the other hand, the async code enabled the possibility of write code that don't block the main threat. Writing async code the program can make and wait many thing at the same time.
 
 #### Adventages
+
 - Very performant
 - Eliminates code blocking
 
 #### Disadventages
+
 - It can be difficult to reason about
 - Harder to write
 
@@ -50,6 +55,18 @@ The event loop continuously checks for queued messages and takes care of the nex
 
 Instead of waiting for something to finish we are doing other things at the same time and the event loop makes sure that we still come back and visit those things that have been queued that need to be taken care of.
 
+## Callback
+
+A callback function is one that is passed as an argument to another function to be "called again" (call back) at a later time. A function that accepts other functions as arguments is called a High-Order function, and it contains the logic to determine when the callback function is executed. It is the combination of these two that allows us to extend our functionality.
+
+The callback pattern is such an important pattern in JavaScript. Traditionally it was the only way to achieve asynchronous coding in JavaScript. Today we have additional patterns in promises and async await. But even those rely on callbacks.
+
+### Problems with callbacks
+
+- Callback Hell
+- Dificult to reason about
+- Inversion of Control
+
 ## Glossary
 
 ### setTimeout()
@@ -62,8 +79,6 @@ Basically what that does is it calls a function after a certain amount of time. 
 var timeoutID = setTimeout(function[, delay]);
 ```
 
-### Callback
 
-A callback function is one that is passed as an argument to another function to be "called again" (call back) at a later time. A function that accepts other functions as arguments is called a High-Order function, and it contains the logic to determine when the callback function is executed. It is the combination of these two that allows us to extend our functionality.
 
 
