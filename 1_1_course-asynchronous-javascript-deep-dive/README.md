@@ -67,6 +67,44 @@ The callback pattern is such an important pattern in JavaScript. Traditionally i
 - Dificult to reason about
 - Inversion of Control
 
+## Promises
+
+***Definition:*** The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+
+Promises provide a powerful async pattern in JavaScript and resolve some problems of callbacks. Promise is an object with *properties* and *methods*. So we now have an object that represents something is going to happen in the future something that will be completed in the future and when this future event occurs a value is provided, **so promise will always provide a value.**
+
+### then()
+
+The .then() method takes up to two arguments; the first argument is a callback function for the resolved case of the promise, and the second argument is a callback function for the rejected case. Each .then() returns a newly generated promise object, which can optionally be used for chaining; for example:
+
+```javascript
+const myPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('foo');
+  }, 300);
+});
+
+myPromise
+  .then(handleResolvedA, handleRejectedA)
+  .then(handleResolvedB, handleRejectedB)
+  .then(handleResolvedC, handleRejectedC);
+```
+
+### catch()
+
+A .catch() is really just a .then() without a slot for a callback function for the case when the promise is resolved. The catch() method returns a Promise and deals with rejected cases only. It behaves the same as calling ***Promise.prototype.then(undefined, onRejected)*** (in fact, calling ***obj.catch(onRejected)*** internally calls ***obj.then(undefined, onRejected))***.
+
+```javascript
+const promise1 = new Promise((resolve, reject) => {
+  throw 'Uh-oh!';
+});
+
+promise1.catch((error) => {
+  console.error(error);
+});
+// expected output: Uh-oh!
+```
+
 ## Glossary
 
 ### setTimeout()
@@ -75,10 +113,16 @@ The global setTimeout() method sets a timer which executes a function or specifi
 
 Basically what that does is it calls a function after a certain amount of time. So when the time has expired then it will call that function to go ahead and execute. So set time out requires the first parameter to be a function passed in an anonymous function that is going to be invoked and the second parameter it's the time javascript will wait to resolve the callback*.
 
-```
+```javascript
 var timeoutID = setTimeout(function[, delay]);
 ```
 
+### (TASK) Javascript Event Loop Task
 
+A task is any JavaScript code which is scheduled to be run by the standard mechanisms such as initially starting to run a program, an event callback being run, or an interval or timeout being fired. These all get scheduled on the task queue.
 
+### Microtask
 
+A microtask is a short function which is executed after the function or program which created it exits and only if the JavaScript execution stack is empty, but before returning control to the event loop being used by the user agent to drive the script's execution environment.
+
+Microtask have more priority and javascript will try to resolve all microtasks before continue with the next task.
