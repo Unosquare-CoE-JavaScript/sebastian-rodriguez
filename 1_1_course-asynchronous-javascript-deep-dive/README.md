@@ -11,8 +11,14 @@
   - [Event Loop](#event-loop)
   - [Callback](#callback)
     - [Problems with callbacks](#problems-with-callbacks)
+  - [Promises](#promises)
+    - [then()](#then)
+    - [catch()](#catch)
   - [Glossary](#glossary)
     - [setTimeout()](#settimeout)
+    - [(TASK) Javascript Event Loop Task](#task-javascript-event-loop-task)
+    - [Microtask](#microtask)
+    - [Fetch API](#fetch-api)
 
 ## Sync vs Async
 
@@ -126,3 +132,18 @@ A task is any JavaScript code which is scheduled to be run by the standard mecha
 A microtask is a short function which is executed after the function or program which created it exits and only if the JavaScript execution stack is empty, but before returning control to the event loop being used by the user agent to drive the script's execution environment.
 
 Microtask have more priority and javascript will try to resolve all microtasks before continue with the next task.
+
+### Fetch API
+
+The Fetch API provides a JavaScript interface for accessing and manipulating parts of the HTTP pipeline, such as requests and responses. It also provides a global fetch() method that provides an easy, logical way to fetch resources asynchronously across the network.
+
+Fetch is part of the ***window*** objec that it's only available in the browser. For other environments like node or workers you need other alternative like Axios
+
+Example:
+
+```javascript
+fetch('http://example.com/movies.json')
+  .then(response => response.json())
+  .then(data => console.log(data));
+
+```
