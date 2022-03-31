@@ -14,11 +14,18 @@
   - [Promises](#promises)
     - [then()](#then)
     - [catch()](#catch)
+    - [finally()](#finally)
+    - [Promise.all()](#promiseall)
+    - [Promise.race()](#promiserace)
+    - [Promise.allSettled()](#promiseallsettled)
+    - [Promise.any()](#promiseany)
   - [Glossary](#glossary)
     - [setTimeout()](#settimeout)
-    - [(TASK) Javascript Event Loop Task](#task-javascript-event-loop-task)
+    - [Macrotasks](#macrotasks)
     - [Microtask](#microtask)
     - [Fetch API](#fetch-api)
+    - [Module Pattern](#module-pattern)
+      - [Adventages](#adventages-2)
 
 ## Sync vs Async
 
@@ -111,6 +118,87 @@ promise1.catch((error) => {
 // expected output: Uh-oh!
 ```
 
+### finally()
+
+The finally() method returns a Promise. When the promise is finally either fulfilled or rejected, the specified callback function is executed. This provides a way for code to be run whether the promise was fulfilled successfully, or instead rejected.
+
+This helps to avoid duplicating code in both the promise's then() and catch() handlers.
+
+```javascript
+function checkMail() {
+  return new Promise((resolve, reject) => {
+    if (Math.random() > 0.5) {
+      resolve('Mail has arrived');
+    } else {
+      reject(new Error('Failed to arrive'));
+    }
+  });
+}
+
+checkMail()
+  .then((mail) => {
+    console.log(mail);
+  })
+  .catch((err) => {
+    console.error(err);
+  })
+  .finally(() => {
+    console.log('Experiment completed');
+  });
+```
+
+### Promise.all()
+
+The ***Promise.all()*** static method allows you to enter several promises in the form of an array. So inside of the parentheses here we would pass enter in an array and that array would consist of promises.
+
+The Promise.all() method takes an iterable of promises as an input, and returns a single Promise that resolves to an array of the results of the input promises. This returned promise will resolve when all of the input's promises have resolved, or if the input iterable contains no promises. It rejects immediately upon any of the input promises rejecting or non-promises throwing an error, and will reject with this first rejection message / error.
+
+```javascript
+const promise1 = Promise.resolve(3);
+const promise2 = 42;
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 100, 'foo');
+});
+
+Promise.all([promise1, promise2, promise3]).then((values) => {
+  console.log(values);
+});
+// expected output: Array [3, 42, "foo"]
+```
+
+### Promise.race()
+
+The ***Promise.race()*** static method is basically a race. It's literally a race. Hence only the first promise that is resolved wins all the others are ignored so if you're waiting for several promises but you only need one of them.
+
+Then, the ***Promise.race()*** method returns a promise that fulfills or rejects as soon as one of the promises in an iterable fulfills or rejects, with the value or reason from that promise.
+
+### Promise.allSettled()
+
+The Promise.allSettled() method returns a promise that resolves after all of the given promises have either fulfilled or rejected, with an array of objects that each describes the outcome of each promise.
+
+It is typically used when you have multiple asynchronous tasks that are not dependent on one another to complete successfully, or you'd always like to know the result of each promise.
+
+In comparison, the Promise returned by Promise.all() may be more appropriate if the tasks are dependent on each other / if you'd like to immediately reject upon any of them rejecting.
+
+```javascript
+const promise1 = Promise.resolve(3);
+const promise2 = new Promise((resolve, reject) => setTimeout(reject, 100, 'foo'));
+const promises = [promise1, promise2];
+
+Promise.allSettled(promises).
+  then((results) => results.forEach((result) => console.log(result.status)));
+
+// expected output:
+// "fulfilled"
+// "rejected"
+```
+
+### Promise.any()
+
+Promise.any() takes an iterable of Promise objects. It returns a single promise that resolves as soon as any of the promises in the iterable fulfills, with the value of the fulfilled promise. If no promises in the iterable fulfill (if all of the given promises are rejected), then the returned promise is rejected with an AggregateError, a new subclass of Error that groups together individual errors.
+
+Unlike Promise.race(), which returns the first settled value (either fulfillment or rejection), this method returns the first fulfilled value. This method will ignore all rejected promises up until the first promise that fulfills.
+
 ## Glossary
 
 ### setTimeout()
@@ -123,7 +211,7 @@ Basically what that does is it calls a function after a certain amount of time. 
 var timeoutID = setTimeout(function[, delay]);
 ```
 
-### (TASK) Javascript Event Loop Task
+### Macrotasks
 
 A task is any JavaScript code which is scheduled to be run by the standard mechanisms such as initially starting to run a program, an event callback being run, or an interval or timeout being fired. These all get scheduled on the task queue.
 
@@ -147,3 +235,48 @@ fetch('http://example.com/movies.json')
   .then(data => console.log(data));
 
 ```
+
+### Module Pattern
+
+[Reference](https://www.oreilly.com/library/view/learning-javascript-design/9781449334840/ch09s02.html)
+
+The Module pattern was originally defined as a way to provide both private and public encapsulation for classes in conventional software engineering.
+
+In JavaScript, the Module pattern is used to further emulate the concept of classes in such a way that we’re able to include both public/private methods and variables inside a single object, thus shielding particular parts from the global scope. What this results in is a reduction in the likelihood of our function names conflicting with other functions defined in additional scripts on the page.
+
+The Module pattern encapsulates “privacy” state and organization using closures. It provides a way of wrapping a mix of public and private methods and variables, protecting pieces from leaking into the global scope and accidentally colliding with another developer’s interface. With this pattern, only a public API is returned, keeping everything else within the closure private.
+
+```javascript
+var testModule = (function () {
+
+  var counter = 0;
+
+  return {
+
+    incrementCounter: function () {
+      return ++counter;
+    },
+
+    resetCounter: function () {
+      console.log( "counter value prior to reset: " + counter );
+      counter = 0;
+    }
+  };
+
+})();
+
+// Usage:
+
+// Increment our counter
+testModule.incrementCounter();
+
+// Check the counter value and reset
+// Outputs: 1
+testModule.resetCounter();
+```
+
+#### Adventages
+
+- Avoid Collisions (Namespace)
+- Reusability
+- Maintainability
