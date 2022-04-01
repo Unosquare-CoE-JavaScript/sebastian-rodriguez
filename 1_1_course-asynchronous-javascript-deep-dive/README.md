@@ -19,6 +19,9 @@
     - [Promise.race()](#promiserace)
     - [Promise.allSettled()](#promiseallsettled)
     - [Promise.any()](#promiseany)
+  - [Async - Await](#async---await)
+    - [Await](#await)
+    - [try/catch](#trycatch)
   - [Glossary](#glossary)
     - [setTimeout()](#settimeout)
     - [Macrotasks](#macrotasks)
@@ -198,6 +201,29 @@ Promise.allSettled(promises).
 Promise.any() takes an iterable of Promise objects. It returns a single promise that resolves as soon as any of the promises in the iterable fulfills, with the value of the fulfilled promise. If no promises in the iterable fulfill (if all of the given promises are rejected), then the returned promise is rejected with an AggregateError, a new subclass of Error that groups together individual errors.
 
 Unlike Promise.race(), which returns the first settled value (either fulfillment or rejection), this method returns the first fulfilled value. This method will ignore all rejected promises up until the first promise that fulfills.
+
+## Async - Await
+
+There’s a special syntax to work with promises in a more comfortable fashion, called “async/await”. The async and await keywords enable asynchronous, promise-based behavior to be written in a cleaner style, avoiding the need to explicitly configure promise chains.
+
+### Await
+
+Async functions can contain zero or more await expressions. Await expressions make promise-returning functions behave as though they're synchronous by suspending execution until the returned promise is fulfilled or rejected. The resolved value of the promise is treated as the return value of the await expression. Use of async and await enables the use of ordinary try / catch blocks around asynchronous code.
+
+### try/catch
+
+The try...catch statement marks a try block and a catch block. If the code in the try block throws an exception then the code in the catch block will be executed.
+
+```javascript
+try {
+  nonExistentFunction();
+} catch (error) {
+  console.error(error);
+  // expected output: ReferenceError: nonExistentFunction is not defined
+  // Note - error messages will vary depending on browser
+}
+
+```
 
 ## Glossary
 
