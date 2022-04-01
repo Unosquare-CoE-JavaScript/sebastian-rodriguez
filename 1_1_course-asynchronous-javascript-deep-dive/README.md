@@ -22,6 +22,7 @@
   - [Async - Await](#async---await)
     - [Await](#await)
     - [try/catch](#trycatch)
+  - [Generator](#generator)
   - [Glossary](#glossary)
     - [setTimeout()](#settimeout)
     - [Macrotasks](#macrotasks)
@@ -223,6 +224,32 @@ try {
   // Note - error messages will vary depending on browser
 }
 
+```
+
+## Generator
+
+Generators have been around longer than async await. Basically a generator is a way to write code that you can pause and then continue at a later time. So traditionally we use code that runs from start to finish. A generator is a function that we can use to cause the code to yield and the code won't continue until we tell it to at some later time. When you yield or pause the code it doesn't hold up code that may be elsewhere.
+
+A more technical way to describe it is you start a generator function and then you can exit that function before it runs all the code. Later you can reenter that function at the point where you exited it is even possible that you do not want to continue the function at all or so it may not ever finish.
+
+The generators allows you to define an iterative algorithm by writing a single function whose execution is not continuous. Generator functions are written using the function* syntax.
+
+When called, generator functions do not initially execute their code. Instead, they return a special type of iterator, called a Generator. When a value is consumed by calling the generator's next method, the Generator function executes until it encounters the yield keyword.
+
+The function can be called as many times as desired, and returns a new Generator each time. Each Generator may only be iterated once.
+
+```javascript
+function* generator() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+const gen = generator(); // "Generator { }"
+
+console.log(gen.next().value); // 1
+console.log(gen.next().value); // 2
+console.log(gen.next().value); // 3
 ```
 
 ## Glossary
