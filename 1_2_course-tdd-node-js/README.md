@@ -23,6 +23,9 @@
   - [Test Doubles](#test-doubles)
     - [Types](#types)
     - [Mock Frameworks](#mock-frameworks)
+  - [Best Practices](#best-practices)
+  - [Code Coverage Analysis](#code-coverage-analysis)
+    - [Types](#types-1)
   - [Tools](#tools)
     - [Mocha](#mocha)
     - [Chai](#chai)
@@ -200,6 +203,46 @@ it('likes BDD!', () => {
 - They provide a fast means for creating mocking expectations for you tests
 - They can be much more efficient that implementing custom mock objects of your own creation
 - Creating mock objects by hand can be tedious and error prone
+
+## Best Practices
+
+- Always do the net simplest test case
+  - Doing the next simplest test case allows you to gradually increase the complexity of your code
+  - If you jump into the complex test cases too quickly you will find yourself stuck writing a lof of functionality all at once
+  - Beyond just slowing you down, this can also lead to bad design decisions
+- Use descriptive test names
+  - Code is read 1000 times more than it's written. Make it clear and readable!
+  - Unit tests are the best documentation for how your code works. Make them easy to undestand.
+  - Test suites should name the class or function under test and the test names should describe the functionality being tested.
+- Keep test fast
+  - One biggest benefits of TDD is the fast feedback on how your changes have affected things.
+  - This goes away if your unit test take more than a few seconds to build and run
+  - To help your test stay fast try:
+    - Keep console output to a minimum. This slows things down and can clutter up the testing framework output.
+    - Mock out any slow collaborators with test doubles that are fast.
+- Use code coverage tools
+  - Once you have all your test cases covered and you think you're done run your unit test through a code coverage tool
+  - This can help you identify any test cases you may have missed (i.e. negative test cases).
+  - You should have a goal of 100% code coverage functions with real logic in them (i.i. not simple getters/setters).
+  - Istanbul is easy to install. It's a code coverage tool for javascript that generates easy to use html output
+- Run your test multiple times and in random order
+  - Running your test many times will help ensure that you don't have any flaky test that fail intermittently
+  - Running you test in random order ensures that your tests don't have any dependencies between each other
+- Use a static code analysis tool
+  - This ensures code quality
+
+## Code Coverage Analysis
+
+- Code coverage tools analyze the execution of your production code as you run your unit tests to see what parts of the production code were executed
+- Code coverage tools produce a report at the end of the execution specifying the coverage of the tests.
+- The coverage report can tell you if you have any holes in your tests where parts of the production code are not being tested
+
+### Types
+
+- **Line:** The coverage report specifies which executable lines of the production code were executed
+- **Statement:** THis verify that every individual statement is covered (even multiple statements on the same line)
+- **Branch:** Shows the percentage of each branch point has been executed at least once
+- **Modified Condition/Decision:** This is an advance form of branch coverage which verifies that all entry and exit points in a program has been invoked at least once and with all possible conditions critera combinations
 
 ## Tools
 
