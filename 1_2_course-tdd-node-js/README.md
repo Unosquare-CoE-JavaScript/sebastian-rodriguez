@@ -20,10 +20,19 @@
   - [Testing Asynchronous Code](#testing-asynchronous-code)
     - [Async Code](#async-code)
     - [Test](#test)
+  - [Test Doubles](#test-doubles)
+    - [Types](#types)
+    - [Mock Frameworks](#mock-frameworks)
   - [Tools](#tools)
     - [Mocha](#mocha)
     - [Chai](#chai)
     - [Vitest](#vitest)
+    - [Sinon.js](#sinonjs)
+      - [Examples](#examples)
+      - [Spies](#spies)
+        - [Sinon Stubs](#sinon-stubs)
+      - [Mocks](#mocks)
+      - [Sinon Cleanup](#sinon-cleanup)
 
 ## Unit Testing
 
@@ -121,7 +130,7 @@ describe('test_suite', () => {
 - Basic call with expression and message parameters
 - The expressions parameter is tested for "truthiness" and if it passes the assert passes
 - When the assert fails the specified message is included in the failure output
-- The Assert API provides MANY additional calls to easily verify defferent things.
+- The Assert API provides MANY additisonal calls to easily verify defferent things.
 - Most all of these API calls take one of two forms:
   - Expression to evaluate with an optional failure message
   - Actual value compared with an expected value with an optional failure message.
@@ -172,6 +181,26 @@ it('likes BDD!', () => {
 
 - To test async code depends of the type of async code you are using. If you are using callbacks you should pass a "done" parameter provided by Chai. With Promises and async/await you just have to invoke the code and test the value in the .then() method or try/catch block
 
+## Test Doubles
+
+- Almost all code depends on and collaborates with other parts of the system.
+- Those other parts of the system are not always wasy to replicate in the unit test environment or would make test slow if used directly
+
+### Types
+
+- **Dummy:** Objects that can be passed around as necessary but do not have any type of test implementation and should never be used
+- **Fake:** These object generally have a simplified functional implementation of a particular interface that is adequate for testing
+- **Stub:** These objects provide implementations with canned answers that are suitable for the test
+- **Spies:** These objects provide implementations that record the calues that were passed in so they can be used by the test
+- **Mocks:** These objects are pre-programmed to expect specific calls and parameters and can throw exceptions when neccesary
+
+### Mock Frameworks
+
+- Most mock frameworks provide easy ways for automatically creating any of these types of test doubles **at runtime**
+- They provide a fast means for creating mocking expectations for you tests
+- They can be much more efficient that implementing custom mock objects of your own creation
+- Creating mock objects by hand can be tedious and error prone
+
 ## Tools
 
 ### Mocha
@@ -193,3 +222,88 @@ it('likes BDD!', () => {
 
 - Vitest is a blazing fast javascript unit test framework powered by Vite.
 - Chai built-in for assertions + Jest expect compatible APIs
+
+### Sinon.js
+
+- Javascript mocking framework
+- Works in node and web server
+- works well with Mocha and Chai
+
+#### Examples
+
+#### Spies
+
+```javascript
+it('test spies', () => {
+  const callback = sinon.spy();
+  prodFunction(callback)
+  expect(callback).to.have.been.called()
+})
+```
+
+- The most basic test double provided by Sinon is the spy.
+- A spy is created by calling the ***sinon.spy*** method.
+- A spy keeps track of:
+  - How many times a function was called
+  - What parameters were passed to the function
+  - What value the function returned or if it threw
+
+```javascript
+// Method Wrapping Spy
+it('test spies', () => {
+  const tc = new TestClass()
+  sinon.spy(tc, 'testFunction');
+  tc.testFunction()
+  expect(tc.testFunction()).to.have.been.called()
+})
+```
+
+- Spies can be created in two fashions: either anonymous or wrapping a particular method
+- Anonymous spies are used to create fake functions that need to be spied on during testing
+- Method wrapping spies are created on existing functions such as class methods
+
+##### Sinon Stubs
+
+```javascript
+//Sinon Stub
+it('test stub', () => {
+  const tc = new TestClass();
+  sinon.stub(tc, 'testFunction');
+  testCall(tc);
+  expect(tc.testFunction).to.have.been.called()
+})
+```
+
+- Stubs are like spies in that they can be anonymous or wrap existing functions
+- Stubs support the full spy testing API
+- Stubs are different from spies in that they do NOT call the wrapper function
+- Stubs allow you to modify the behavior of the stubbed function call.
+
+#### Mocks
+
+```javascript
+// Sinon Mocks
+it('test mock', () => {
+  const tc = new TestClass();
+  const mock = sinon.mock(tc);
+  mock.expects('func').once()
+  testCall(tc)
+  mock.verify();
+})
+
+```
+
+- Sinon also provides an API for creating mock objects
+- Sinon mocks provide all the capabilities of Sinon spies and stubs with the addition of pre-programmed expectations
+- A mock will verify that the specified expectations have occurred and if not will fail the test.
+
+#### Sinon Cleanup
+
+````javascript
+afterEach(() => {
+  sinon.restore()
+})
+````
+
+- Sinon creates all of its test doubles in a sandbox
+- **After each test the sandbox needs to be reset to clear out all the test doubles that were created by calling the *sinon.restore* method**
