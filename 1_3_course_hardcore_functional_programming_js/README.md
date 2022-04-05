@@ -20,3 +20,8 @@ Why we should use pure functions:
 - Testable
 - Composable
 - Properties/Contract
+
+## Notes
+
+- When you are working with currying functions. The data "should" be asbtract. If you tigh tha data parameter with an specific name, you will have a very specific function attached to a domain
+- 
