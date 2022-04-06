@@ -21,7 +21,14 @@ Why we should use pure functions:
 - Composable
 - Properties/Contract
 
+## Curry
+
+Function Currying is a concept of breaking a function with many arguments into many functions with single argument in such a way, that the output is same. In other words, its a technique of simplifying a multi-valued argument function into single-valued argument multi-functions.
+
+## Composition
+
+Function composition returns a new function and you can create sub compositions and compose new functions. The composition works like a giant pipeline. So you have this data structure that you're maintaining that's flowing through your pipeline-
+
 ## Notes
 
 - When you are working with currying functions. The data "should" be asbtract. If you tigh tha data parameter with an specific name, you will have a very specific function attached to a domain
-- 
