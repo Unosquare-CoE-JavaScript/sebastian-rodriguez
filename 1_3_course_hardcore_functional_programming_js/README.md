@@ -27,7 +27,11 @@ Function Currying is a concept of breaking a function with many arguments into m
 
 ## Composition
 
-Function composition returns a new function and you can create sub compositions and compose new functions. The composition works like a giant pipeline. So you have this data structure that you're maintaining that's flowing through your pipeline-
+Function composition returns a new function and you can create sub compositions and compose new functions. The composition works like a giant pipeline. So you have this data structure that you're maintaining that's flowing through your pipeline.
+
+## Functor
+
+A thing with a ***map*** method.
 
 ## Notes
 
