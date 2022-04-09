@@ -53,3 +53,8 @@ The event loop uses a single thread, but a lot of the code that you and I write 
 ## Thread Pool
 
 The thread pool is a series of four threads that can be used for running computationally intensive tasks. That means that in addition to the thread used for the event loop, there are four other threads that can be used to offload epensive calculations that need to occur inside of our application.
+
+## Ways to improve node performance
+
+- Use Node in 'Cluster' Mode  (?) Recommended
+- Use Worker Threads          (?) Experimental
