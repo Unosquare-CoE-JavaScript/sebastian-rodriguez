@@ -1,4 +1,5 @@
 import fastify from 'fastify';
+import { Worker } from 'worker_threads';
 import { PORT } from './const/env';
 import router from './router';
 import doHash from './utils/pbkdf2.util';
@@ -29,6 +30,26 @@ const app = () => {
   // ROUTES
   // ===================================================================
   router(server);
+
+  server.get('/', async (request, reply) => {
+    const worker = new Worker('./workers/message.worker.js');
+
+    worker.on('message', message => {
+      server.log.warn(message);
+      reply.send({ message });
+    });
+
+    worker.on('error', error => {
+      server.log.error(error);
+    });
+
+    worker.on('exit', exitCode => {
+      server.log.error(exitCode);
+    });
+
+    worker.postMessage('Seromarin');
+  });
+
   server.get('/ping', async (request, reply) => {
     request.log.info('ping');
     doHash(() => {
