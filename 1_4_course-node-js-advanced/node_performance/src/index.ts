@@ -1,24 +1,20 @@
-import fastify from 'fastify';
+// IMPORTS
+// ===================================================================
+import cluster from 'cluster';
+
 import dotenv from 'dotenv';
+import app from './server';
 
+// CONFIG
+// ===================================================================
 dotenv.config();
+const server = app();
 
-const PORT = process.env.PORT || 3000;
-
-const server = fastify({
-  logger: true,
-});
-
-server.get('/ping', async request => {
-  request.log.info('ping');
-  return { pong: 'pong' };
-});
-
-(async () => {
-  try {
-    await server.listen({ port: Number(PORT) });
-  } catch (err) {
-    server.log.error(err);
-    process.exit(1);
-  }
-})();
+if (cluster.isPrimary) {
+  cluster.fork();
+  cluster.fork();
+  cluster.fork();
+  cluster.fork();
+} else {
+  server();
+}

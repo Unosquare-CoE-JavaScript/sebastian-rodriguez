@@ -58,3 +58,17 @@ The thread pool is a series of four threads that can be used for running computa
 
 - Use Node in 'Cluster' Mode  (?) Recommended
 - Use Worker Threads          (?) Experimental
+
+## Cluestering
+
+```
+               Cluster Manager
+                      |
+      +---------------+--------------+
+      ▼               ▼              ▼
+Single Thread   Single Thread  Single Thread
+      ▼               ▼              ▼
+ Node Server     Node Server    Node Server
+```
+
+The clustering launch multiple instances on the same machine.
