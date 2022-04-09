@@ -1,8 +1,7 @@
-import cluster from 'cluster';
 import fastify from 'fastify';
 import { PORT } from './const/env';
 import router from './router';
-import doWork from './utils/do-work';
+import doHash from './utils/pbkdf2.util';
 
 // let server: FastifyInstance;
 
@@ -23,17 +22,18 @@ const app = () => {
   const server = fastify({
     logger: true,
   });
-  server.log.info(
-    `Server created at ${cluster.isPrimary ? 'primary' : 'secondary'}`
-  );
+  // server.log.info(
+  //   `Server created at ${cluster.isPrimary ? 'primary' : 'secondary'}`
+  // );
 
   // ROUTES
   // ===================================================================
   router(server);
-  server.get('/ping', async request => {
+  server.get('/ping', async (request, reply) => {
     request.log.info('ping');
-    doWork(5000);
-    return { pong: 'pong' };
+    doHash(() => {
+      reply.send({ ping: 'pong' });
+    });
   });
 
   // APP

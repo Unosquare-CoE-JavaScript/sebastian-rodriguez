@@ -1,3 +1,4 @@
+process.env.UV_THREADPOOL_SIZE = '1';
 // IMPORTS
 // ===================================================================
 import cluster from 'cluster';
