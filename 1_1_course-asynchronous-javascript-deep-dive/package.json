@@ -1,0 +1,16 @@
+{
+  "name": "1_1_course-asynchronous-javascript-deep-dive",
+  "version": "1.0.0",
+  "description": "[Asynchronous Javascript Deep Dive]",
+  "main": "1_sync_code.js",
+  "scripts": {
+    "rym": "node src/6_promises_rick_and_morty.js"
+  },
+  "keywords": [],
+  "author": "Seromarin",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "ohmyfetch": "^0.4.15"
+  }
+}
