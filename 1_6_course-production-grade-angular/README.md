@@ -43,7 +43,7 @@ Complexity consists of **managing of state, flow control,** and **code volume**
 - If you need to **clarify your code with comments** then it is *probably* too complex
 - It's *impossible* to write **good tests** for **bad code**
 
-## Angular
+## Managing Angular Complexity
 
 - Your routing table will generally describe your features.
 - A feature will generally get a route
@@ -63,3 +63,7 @@ Complexity consists of **managing of state, flow control,** and **code volume**
 - Data models should be decoupled especially inside of a monorepo and API projects
 - Do not unnecessarily optimize until you have a good reason to do so
   - For instance, a component should not become a lib until it is going to be used in more than one app
+
+## Data Modeling
+
+The data model enable the developer to know how the data is. That means we can infer many things based on the model of the data enabling decouple banckend and frontend teams.
