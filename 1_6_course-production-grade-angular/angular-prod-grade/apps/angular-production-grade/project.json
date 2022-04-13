@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/angular-production-grade",
         "index": "apps/angular-production-grade/src/index.html",
@@ -18,7 +20,10 @@
           "apps/angular-production-grade/src/favicon.ico",
           "apps/angular-production-grade/src/assets"
         ],
-        "styles": ["apps/angular-production-grade/src/styles.scss"],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+          "apps/angular-production-grade/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -86,7 +91,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/angular-production-grade"],
+      "outputs": [
+        "coverage/apps/angular-production-grade"
+      ],
       "options": {
         "jestConfig": "apps/angular-production-grade/jest.config.js",
         "passWithNoTests": true
