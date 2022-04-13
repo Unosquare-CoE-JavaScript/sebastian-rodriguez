@@ -1,1 +1,14 @@
-<p>widgets works!</p>
+<div class="component-container">
+  <div class="list-component">
+    <angular-prod-grade-widgets-list [widgets]="widgets"
+      (selected)="selectWidget($event)"
+      (deleted)="deleteWidget($event)">
+    </angular-prod-grade-widgets-list>
+  </div>
+  <div class="details-component">
+    <angular-prod-grade-widgets-details [widget]="selectedWidget"
+      (saved)="saveWidget($event)"
+      (cancelled)="resetForm()">
+    </angular-prod-grade-widgets-details>
+  </div>
+</div>

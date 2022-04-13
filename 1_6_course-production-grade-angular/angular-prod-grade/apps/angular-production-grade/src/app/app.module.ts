@@ -1,37 +1,34 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
+import { CoreDataModule } from '@angular-prod-grade/core-data';
+import { CoreStateModule } from '@angular-prod-grade/core-state';
+import { MaterialModule } from '@angular-prod-grade/material';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { StoreModule } from '@ngrx/store';
-import { CoreDataModule, coreDataRoutes } from '@angular-prod-grade/core-data';
-import {
-  CoreStateModule,
-  coreStateRoutes,
-} from '@angular-prod-grade/core-state';
-import { MaterialModule, materialRoutes } from '@angular-prod-grade/material';
-import { RoutingModule } from './routing.module';
-import { WidgetsComponent } from './widgets/widgets.component';
-import { WidgetsListComponent } from './widgets/widgets-list/widgets-list.component';
-import { WidgetsDetailsComponent } from './widgets/widgets-details/widgets-details.component';
+import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { RoutingModule } from './routing.module';
+import { WidgetsDetailsComponent } from './widgets/widgets-details/widgets-details.component';
+import { WidgetsListComponent } from './widgets/widgets-list/widgets-list.component';
+import { WidgetsComponent } from './widgets/widgets.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    WidgetsComponent,
-    WidgetsListComponent,
-    WidgetsDetailsComponent,
     HomeComponent,
+    WidgetsComponent,
+    WidgetsDetailsComponent,
+    WidgetsListComponent,
   ],
   imports: [
-    BrowserModule,
-    HttpClientModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({}, {}),
+    BrowserModule,
     CoreDataModule,
     CoreStateModule,
+    FormsModule,
+    HttpClientModule,
     MaterialModule,
     RoutingModule,
   ],

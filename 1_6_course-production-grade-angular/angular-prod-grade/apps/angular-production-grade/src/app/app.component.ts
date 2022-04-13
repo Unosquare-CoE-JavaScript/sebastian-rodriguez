@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@angular-prod-grade/api-interfaces';
 
 @Component({
   selector: 'angular-prod-grade-root',
@@ -8,6 +6,8 @@ import { Message } from '@angular-prod-grade/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  links = [
+    { path: '/', icon: 'home', title: 'home' },
+    { path: '/widgets', icon: 'view_list', title: 'widgets' },
+  ];
 }
