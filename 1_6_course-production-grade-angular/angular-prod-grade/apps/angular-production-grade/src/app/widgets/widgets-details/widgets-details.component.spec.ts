@@ -1,4 +1,7 @@
+import { MaterialModule } from '@angular-prod-grade/material';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { WidgetsDetailsComponent } from './widgets-details.component';
 
@@ -9,6 +12,7 @@ describe('WidgetsDetailsComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [WidgetsDetailsComponent],
+      imports: [MaterialModule, FormsModule, BrowserAnimationsModule],
     }).compileComponents();
   });
 

@@ -7,6 +7,7 @@
     "api-interfaces": "libs/api-interfaces",
     "core-data": "libs/core-data",
     "core-state": "libs/core-state",
-    "material": "libs/material"
+    "material": "libs/material",
+    "ui-toolbar": "libs/ui/toolbar"
   }
 }

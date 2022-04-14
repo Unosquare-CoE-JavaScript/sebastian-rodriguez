@@ -7,7 +7,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./widgets-details.component.scss'],
 })
 export class WidgetsDetailsComponent {
-  currentWidget!: Widget;
+  currentWidget: Partial<Widget> = {
+    description: '',
+    title: '',
+  };
   originalTitle!: string;
   @Input() set widget(value: Widget) {
     if (value) this.originalTitle = value.title;
