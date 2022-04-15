@@ -23,7 +23,9 @@
     "@angular/router": "~13.3.0",
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
+    "@nestjs/mapped-types": "^1.0.1",
     "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/swagger": "^5.2.1",
     "@ngrx/effects": "^13.1.0",
     "@ngrx/router-store": "^13.1.0",
     "@ngrx/store": "^13.1.0",
@@ -31,7 +33,9 @@
     "@nrwl/angular": "13.10.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~7.4.0",
+    "swagger-ui-express": "^4.3.0",
     "tslib": "^2.0.0",
+    "uuid": "^8.3.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

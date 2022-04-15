@@ -1,5 +1,5 @@
 import { Widget } from '@angular-prod-grade/api-interfaces';
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'angular-prod-grade-widgets-list',
@@ -11,4 +11,8 @@ export class WidgetsListComponent {
   @Input() readonly = false;
   @Output() selected = new EventEmitter();
   @Output() deleted = new EventEmitter();
+
+  trackByWidgetId(index: number, widget: Widget) {
+    return widget.id;
+  }
 }

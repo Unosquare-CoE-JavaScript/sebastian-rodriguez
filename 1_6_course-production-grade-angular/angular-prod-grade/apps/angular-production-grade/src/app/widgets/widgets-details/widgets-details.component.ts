@@ -18,4 +18,8 @@ export class WidgetsDetailsComponent {
   }
   @Output() saved = new EventEmitter();
   @Output() cancelled = new EventEmitter();
+
+  logWidget() {
+    console.log(this.currentWidget);
+  }
 }

@@ -5,7 +5,7 @@
   <mat-card-content>
     <mat-list data-cy="widgets-list">
       <mat-list-item
-        *ngFor="let widget of widgets"
+        *ngFor="let widget of widgets; trackBy: trackByWidgetId"
         attr.data-cy="widget-{{ widget.id }}-item"
         class="mat-list-option"
         (click)="selected.emit(widget)">
