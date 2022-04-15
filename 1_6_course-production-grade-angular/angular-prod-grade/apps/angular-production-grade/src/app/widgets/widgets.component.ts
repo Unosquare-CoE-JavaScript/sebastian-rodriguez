@@ -58,26 +58,18 @@ export class WidgetsComponent implements OnInit {
   }
 
   createWidget(widget: Widget) {
-    // const newWidget = Object.assign({}, widget, { id: this.getRandomID() });
-    // this.widgets = [...this.widgets, newWidget];
-    this.widgets$ = this.widgetService.create(widget);
-    this.resetForm();
+    // Other possible way
+    // this.widgets$ = this.widgetService.create(widget);
+    // This make a second http request with the new data
+    this.widgetService.create(widget).subscribe((_) => this.reset());
   }
 
   updateWidget(widget: Widget) {
-    // this.widgets = this.widgets.map((w) => {
-    //   return widget.id === w.id ? widget : w;
-    // });
-    console.log(widget);
-
-    this.widgetService.update(widget).subscribe();
-    this.reset();
+    this.widgetService.update(widget).subscribe((_) => this.reset());
   }
 
   deleteWidget(widget: Widget) {
-    // this.widgets = this.widgets.filter((w) => widget.id !== w.id);
-    this.widgetService.delete(widget)?.subscribe();
-    this.reset();
+    this.widgetService.delete(widget)?.subscribe((_) => this.reset());
   }
 
   private getRandomID() {
