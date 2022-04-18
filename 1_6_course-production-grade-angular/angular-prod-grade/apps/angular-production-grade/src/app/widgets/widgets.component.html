@@ -6,7 +6,7 @@
     </angular-prod-grade-widgets-list>
   </div>
   <div class="details-component">
-    <angular-prod-grade-widgets-details [widget]="selectedWidget"
+    <angular-prod-grade-widgets-details [widget]="selectedWidget$ | async"
       (saved)="saveWidget($event)"
       (cancelled)="resetForm()">
     </angular-prod-grade-widgets-details>

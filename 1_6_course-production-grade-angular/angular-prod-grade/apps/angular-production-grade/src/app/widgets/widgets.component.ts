@@ -1,5 +1,6 @@
 import { Widget } from '@angular-prod-grade/api-interfaces';
 import { WidgetsService } from '@angular-prod-grade/core-data';
+import { WidgetsFacade } from '@angular-prod-grade/core-state';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -16,10 +17,11 @@ const emptyWidget: Widget = {
 })
 export class WidgetsComponent implements OnInit {
   widgets$: Observable<Widget[]>;
-  selectedWidget!: Widget;
+  selectedWidget$: Observable<Widget>;
 
-  constructor(private readonly widgetService: WidgetsService) {
-    this.widgets$ = this.allWidgets;
+  constructor(private readonly widgetFacade: WidgetsFacade) {
+    this.widgets$ = this.widgetFacade.allWidgets$;
+    this.selectedWidget$ = this.widgetFacade.selectedWidget$;
   }
 
   ngOnInit(): void {
@@ -27,7 +29,7 @@ export class WidgetsComponent implements OnInit {
   }
 
   get allWidgets() {
-    return this.widgetService.all();
+    return this.widgetFacade.loadWidgets();
   }
 
   reset() {
@@ -36,15 +38,15 @@ export class WidgetsComponent implements OnInit {
   }
 
   resetForm() {
-    this.selectedWidget = emptyWidget;
+    this.widgetFacade.selectWidget(emptyWidget);
   }
 
   selectWidget(widget: Widget) {
-    this.selectedWidget = widget;
+    this.widgetFacade.selectWidget(widget);
   }
 
   loadWidgets() {
-    this.widgets$ = this.allWidgets;
+    this.widgetFacade.loadWidgets();
   }
 
   saveWidget(widget: Widget) {
@@ -61,15 +63,15 @@ export class WidgetsComponent implements OnInit {
     // Other possible way
     // this.widgets$ = this.widgetService.create(widget);
     // This make a second http request with the new data
-    this.widgetService.create(widget).subscribe((_) => this.reset());
+    // this.widgetService.create(widget).subscribe((_) => this.reset());
   }
 
   updateWidget(widget: Widget) {
-    this.widgetService.update(widget).subscribe((_) => this.reset());
+    // this.widgetService.update(widget).subscribe((_) => this.reset());
   }
 
   deleteWidget(widget: Widget) {
-    this.widgetService.delete(widget)?.subscribe((_) => this.reset());
+    // this.widgetService.delete(widget)?.subscribe((_) => this.reset());
   }
 
   private getRandomID() {

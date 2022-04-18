@@ -11,13 +11,13 @@ export class WidgetsDetailsComponent {
     description: '',
     title: '',
   };
-  originalTitle!: string;
-  @Input() set widget(value: Widget) {
-    if (value) this.originalTitle = value.title;
-    this.currentWidget = { ...value };
-  }
+  @Input() widget: Widget | null = this.currentWidget as Widget;
   @Output() saved = new EventEmitter();
   @Output() cancelled = new EventEmitter();
+
+  get originalTitle() {
+    return this.widget?.title || '';
+  }
 
   logWidget() {
     console.log(this.currentWidget);
