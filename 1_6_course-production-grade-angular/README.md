@@ -86,3 +86,7 @@ Developers often use the facade design pattern when a system is very complex or 
 - Just as inputs and outputs provide and **API for your components**, facades provide an **API for your application**
 - Facades are an excellent way to **incrementally integrate NgRx**
 - Facaes are great for **mocking** out a **business logic layer**
+
+## Store / NgRx
+
+The store (NgRx) is the **single source of truth**
