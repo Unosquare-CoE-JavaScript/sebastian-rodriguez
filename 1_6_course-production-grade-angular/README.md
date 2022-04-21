@@ -90,3 +90,19 @@ Developers often use the facade design pattern when a system is very complex or 
 ## Store / NgRx
 
 The store (NgRx) is the **single source of truth**
+
+## Testing
+
+"It's imposible to write good tests for bad code."
+
+- You only test what functions do. Ex, call some other function.
+
+### E2E Testing
+
+- Human beings **cannot scale**
+- Human beings **are error prone**
+- Never let a human being do what a **robot can do perfectly every single time**
+
+- **Specs:** What we expect to happen broken down into individual tests
+- **Page Objects:** Responsible for manageing and sequencing the interaction of elements on the page. A simple key value object that helps locate elements on the page.
+- **HTML Templates:** We instrument our HTML templates with data test IDs for easy selection
