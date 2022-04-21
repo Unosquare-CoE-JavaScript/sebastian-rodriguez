@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callbacks in Javascript</title>
+</head>
+<body>
+    <h1 id="title">Callbacks</h1>
+    <button id="callback" type="button">Call me back</button>
+
+    <script>
+        const btn = document.getElementById("callback");
+
+        // Use a callback to make a log when buttons is clicked
+        btn.addEventListener("click", () => console.log("button clicked"));
+    </script>
+</body>
+</html>

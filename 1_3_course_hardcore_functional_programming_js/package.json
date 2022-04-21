@@ -1,0 +1,29 @@
+{
+  "name": "1_3_course_hardcore_functional_programming_js",
+  "version": "1.0.0",
+  "description": "Hardcore Functional Programming in Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:dev": "vitest dev",
+    "coverage": "vitest run --coverage",
+    "ui": "vitest --ui"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ramda": "^0.28.0"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "@types/ramda": "^0.28.7",
+    "@vitest/ui": "^0.8.4",
+    "ts-node": "^10.7.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.3",
+    "vite": "^2.9.1",
+    "vitest": "^0.8.4"
+  }
+}
