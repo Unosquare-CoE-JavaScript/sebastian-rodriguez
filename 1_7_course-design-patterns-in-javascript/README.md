@@ -73,3 +73,11 @@ So a better approach is to basically use use inheritance or use some sort of way
 ### Liskov Substitution Principle
 
 So essentially, the LSP, the Liskov Substitution Principle, says that if you have, let's say, a function which takes a base class like rectangle, it should be able to take a derived class like square without breaking the functionality in any way or ""you should be able to use any derived class instead of a parent class and have it behave in the same manner without modification"
+
+### Interface Segregation Principle
+
+So the interface segregation principle basically means that you have to segregate or split up interfaces into different parts so the people don't implement more than what they need.
+
+So, for example, if you want to formalize the contract that you would have for a printer, then you would make an interface, which just the print method, so you might define the following, you might define a class called printer, you might introduce a constructor which makes sure it's abstract, and then you define the print method.
+
+So that's that's pretty much it then.

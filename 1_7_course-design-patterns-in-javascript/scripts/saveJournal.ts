@@ -1,8 +1,6 @@
 import { join } from 'path';
 import { Journal, PersistanceManager } from '../SOLID/01_SingleResponsibility';
-import consola from 'consola';
-
-const logger = consola.create({});
+import logger from '../utils/logger.util';
 
 logger.success('Starting save file');
 const journal = new Journal();

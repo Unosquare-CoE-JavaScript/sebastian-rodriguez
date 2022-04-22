@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
+import logger from '../utils/logger.util';
 import {
   AndSpecification,
   BetterFilter,
@@ -9,9 +10,6 @@ import {
   Size,
   SizeSpecification,
 } from './02_OpenClose';
-import consola from 'consola';
-
-const logger = consola.create({});
 
 describe('OpenClose', () => {
   describe('Product', () => {
