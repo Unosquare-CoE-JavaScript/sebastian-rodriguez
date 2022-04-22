@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { Journal } from './SingleResponsibility';
+import { Journal } from './01_SingleResponsibility';
 
 describe('Single responsibility', () => {
   describe('Journal', () => {

@@ -57,3 +57,15 @@ The anti-pattern it's a nasty pattern called a God object. A God object is basic
 Another term that we use quite often is called separation of concerns. Separation of concerns is what you do when you refactor, for example, let's suppose you find a really complicated algorithm. What you're trying to do is you try to split it up into several different parts which are somehow related. So this idea of separation of concerns is once again this idea that you have several different concerns, like persistance, some sort of post-processing, parallelism, whatever that happens to be.
 
 Then you separate those into separate components so as to make the entire system easier to figure out, easier to manage, easier to refactor as well.
+
+### Open Close Principle
+
+First of all, the idea of the open close principle is that classes are open for extension, but close for modification, meaning you never jump into an existing class and start to modify it unless you absolutely have to.
+
+Unless there is like a bug in there, then yeah, by the extending functionality is not such a good thing.
+
+In some cases, if you are completely in control of your code and if there are no heavy dependencies, there is really no problem in doing it. But generally, it's not such a great practice because it affects scalability, defects, maintainabilityof your code.
+
+So it's not a great thing.
+
+So a better approach is to basically use use inheritance or use some sort of way of extending functionality.
