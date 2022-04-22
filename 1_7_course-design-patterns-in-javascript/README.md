@@ -69,3 +69,7 @@ In some cases, if you are completely in control of your code and if there are no
 So it's not a great thing.
 
 So a better approach is to basically use use inheritance or use some sort of way of extending functionality.
+
+### Liskov Substitution Principle
+
+So essentially, the LSP, the Liskov Substitution Principle, says that if you have, let's say, a function which takes a base class like rectangle, it should be able to take a derived class like square without breaking the functionality in any way or ""you should be able to use any derived class instead of a parent class and have it behave in the same manner without modification"
