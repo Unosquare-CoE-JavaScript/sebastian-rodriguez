@@ -102,3 +102,37 @@ The dependency inversion principle basically defines a relationship that you sho
   - YAGNI - You Ain't Going to Need It
 - **Dependency Inversion Principle:**
   - High-level modules should not depend upon low-level ones; use abstractions.
+
+## Gamma Categorization
+
+- Design Patters are typically split into three categories
+- This is called *Gamma Categorization* after Erich Gamma, one of GoF authors
+- Creation Patters
+  - Deal with the creation (contruction) of objects
+  - Explicit (contructor) vs implicit (DI, reflection, etc.)
+  - Wholesale (single statement) vs. piecewise (step-by-step)
+- Structural Patters
+  - Concerned with the structure (e.g., class members)
+  - Many patters are wrappers that mimic the inderlying class interface
+  - Stress the importance of good API design
+- Behavioral Patterns
+  - They are all diferent; no central theme
+
+## Builder
+  
+- Some objects are simple and can be created in a single initializer call
+- Other objects require a lot of ceremony to create
+- Having an object with 10 initializer arguments is not productive
+- Instead, opt for piecewise contruction
+- Builder provides an API for constructiong an object step-by-step
+  
+### Definition
+
+When piecewise object construction is complicated, provide an API for doing it succinctly.
+
+### Builder Summary
+
+- A builder is a separate component for building an object
+- Can either give builder an initializer or return it via a static function
+- To make builder fluent, return self
+- Different facets of an object can be build with different builders working in tandem via a base class
