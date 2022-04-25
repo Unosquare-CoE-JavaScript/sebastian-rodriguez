@@ -126,7 +126,7 @@ The dependency inversion principle basically defines a relationship that you sho
 - Instead, opt for piecewise contruction
 - Builder provides an API for constructiong an object step-by-step
   
-### Definition
+### Builder Definition
 
 When piecewise object construction is complicated, provide an API for doing it succinctly.
 
@@ -136,3 +136,19 @@ When piecewise object construction is complicated, provide an API for doing it s
 - Can either give builder an initializer or return it via a static function
 - To make builder fluent, return self
 - Different facets of an object can be build with different builders working in tandem via a base class
+
+## Factory
+
+- Object creation logic becomes too convoluted
+- Initializer is not descriptive
+  - Name is always ***__init__***
+  - Cannot overload with same sets of arguments with different names
+  - Can turn into "optional parameter hell"
+- Wholesale object creation (non-piecewise, unlike Builder) can be outsourced to
+  - A separate method (Factory Method)
+  - That may exist in a separate class (Factory)
+  - Can create hierarchy of factories with Abstract Factory
+
+### Factory Definition
+
+A component responsible solely for the wholesale (not piecewise) creation of objects.
