@@ -81,3 +81,24 @@ So the interface segregation principle basically means that you have to segregat
 So, for example, if you want to formalize the contract that you would have for a printer, then you would make an interface, which just the print method, so you might define the following, you might define a class called printer, you might introduce a constructor which makes sure it's abstract, and then you define the print method.
 
 So that's that's pretty much it then.
+
+### Dependency Inversion Principle
+
+The dependency inversion principle doesn't have anything directly to do with dependency injection, another term that you might have heard thrown around in different programming languages.
+
+The dependency inversion principle basically defines a relationship that you should have between low level modules and high level modules.
+
+### Summary
+
+- **Single Responsability Principle:**
+  - A class should only have one reason to change
+  - Separation of concers -  different classes hadling different, independent tasks/problems
+- **Open-Closed Principle:**
+  - Classes should be open for extension but closed for modification
+- **Liskov Substitution Principle:**
+  - You should be abble to substitute a base type for a subtype
+- **Interface Segregation Principle:**
+  - Don't put too much into an interface; split into a separate interfaces
+  - YAGNI - You Ain't Going to Need It
+- **Dependency Inversion Principle:**
+  - High-level modules should not depend upon low-level ones; use abstractions.
