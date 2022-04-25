@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "projects": {
+    "angular-production-grade": "apps/angular-production-grade",
+    "angular-production-grade-e2e": "apps/angular-production-grade-e2e",
+    "api": "apps/api",
+    "api-interfaces": "libs/api-interfaces",
+    "core-data": "libs/core-data",
+    "core-state": "libs/core-state",
+    "material": "libs/material",
+    "ui-toolbar": "libs/ui/toolbar"
+  }
+}

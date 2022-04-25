@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/ui/toolbar",
+  "sourceRoot": "libs/ui/toolbar/src",
+  "prefix": "angular-prod-grade",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ui/toolbar"],
+      "options": {
+        "jestConfig": "libs/ui/toolbar/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/ui/toolbar/src/**/*.ts",
+          "libs/ui/toolbar/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

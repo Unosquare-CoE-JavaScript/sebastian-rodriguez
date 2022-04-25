@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/core-state",
+  "sourceRoot": "libs/core-state/src",
+  "prefix": "angular-prod-grade",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/core-state"],
+      "options": {
+        "jestConfig": "libs/core-state/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/core-state/src/**/*.ts",
+          "libs/core-state/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
