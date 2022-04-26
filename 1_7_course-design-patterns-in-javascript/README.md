@@ -152,3 +152,30 @@ When piecewise object construction is complicated, provide an API for doing it s
 ### Factory Definition
 
 A component responsible solely for the wholesale (not piecewise) creation of objects.
+
+### Factory Summary
+
+- A *factory method* is a static method that creates objects
+- A factory is any entity that can take care of object creation
+- A factory can be external or reside inside the object as an innet class
+- Hierarchies of factories can be used to create related objects
+
+## Prototype
+
+- Complicated objects (e.g. cars) aren't designed from scratch
+  - They reiterate existing designs
+- An existing (partially or fully contructed) design is a Prototype
+- We make a copy (clone) the prototype and customize it
+  - Requires 'deep copy' support
+- We make the cloning convenient (e.g. via Factory)
+
+### Prototype Definition
+
+A partially or fully initialized object that you copy (clone) and make use of.
+
+### Prototype Summary
+
+- To implement a prototype, partially construct an object and store somewhere
+- Deep copy the prototype
+- Customize the resulting instance
+- A factory provides a convenient API for using prototypes
