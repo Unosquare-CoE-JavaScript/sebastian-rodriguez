@@ -203,3 +203,18 @@ A component which is intantiated only once.
 - A constructor can choose what to return; we can keep returning same instance
 - Monostate: many instances, shared data
 - Directly depending on the Singleton is a bad idea; introduce a dependency instead
+
+## Adapter
+
+Getting the interface you want from the interface you have
+
+### Adapter Definition
+
+A contruct which adapts an existing interface X to conform to the required interface Y
+
+### Adapter Summary
+
+- Implementing an Adapter is easy
+- Determine the API you have and the API you need
+- Create a component which aggregates (has a reference to, ...) the adaptee
+- Intermediate representations can pile up: use caching and other optimizations
