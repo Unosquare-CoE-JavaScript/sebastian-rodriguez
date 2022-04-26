@@ -179,3 +179,27 @@ A partially or fully initialized object that you copy (clone) and make use of.
 - Deep copy the prototype
 - Customize the resulting instance
 - A factory provides a convenient API for using prototypes
+
+## Singleton
+
+A design pattern everybody loves to hate...
+
+"When discussing which patters to drop, we found that we still love them all. (Not really - I'm in favor of dropping Singleton. Its use is almost always a design small.) -- Erich Gamma
+
+- For some components it only makes sense to have one in the system
+  - Database repository
+  - Object factory
+- E.g., the constructor call is expensive
+  - We want initialization to only happen once
+  - We provide everyone with the same instance
+- Want to prevent anyone creating additional copies
+
+### Singleton Definition
+
+A component which is intantiated only once.
+
+### Singleton Summary
+
+- A constructor can choose what to return; we can keep returning same instance
+- Monostate: many instances, shared data
+- Directly depending on the Singleton is a bad idea; introduce a dependency instead
