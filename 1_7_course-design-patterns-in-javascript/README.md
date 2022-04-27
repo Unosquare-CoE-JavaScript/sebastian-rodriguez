@@ -1,5 +1,49 @@
 # DESIGN PATTERNS IN JAVASCRIPT
 
+- [DESIGN PATTERNS IN JAVASCRIPT](#design-patterns-in-javascript)
+  - [Introduction](#introduction)
+  - [The Patterns](#the-patterns)
+  - [SOLID](#solid)
+    - [S -> Single Responsible Principle](#s---single-responsible-principle)
+    - [O -> Open Close Principle](#o---open-close-principle)
+    - [L -> Liskov Substitution Principle](#l---liskov-substitution-principle)
+    - [I -> Interface Segregation Principle](#i---interface-segregation-principle)
+    - [D -> Dependency Inversion Principle](#d---dependency-inversion-principle)
+    - [Summary](#summary)
+  - [Gamma Categorization](#gamma-categorization)
+  - [Builder](#builder)
+    - [Builder Definition](#builder-definition)
+    - [Builder example](#builder-example)
+    - [Builder Summary](#builder-summary)
+  - [Factory](#factory)
+    - [Factory Definition](#factory-definition)
+    - [Factory Example](#factory-example)
+    - [Factory Summary](#factory-summary)
+  - [Prototype](#prototype)
+    - [Prototype Definition](#prototype-definition)
+    - [Prototype Example](#prototype-example)
+    - [Prototype Summary](#prototype-summary)
+  - [Singleton](#singleton)
+    - [Singleton Definition](#singleton-definition)
+    - [Singleton Example](#singleton-example)
+    - [Singleton Summary](#singleton-summary)
+  - [Adapter](#adapter)
+    - [Adapter Definition](#adapter-definition)
+    - [Adapter Example](#adapter-example)
+    - [Adapter Summary](#adapter-summary)
+  - [Bridge](#bridge)
+  - [Bridge Definition](#bridge-definition)
+    - [Bridge Example](#bridge-example)
+    - [Bridge Summary](#bridge-summary)
+  - [Composite](#composite)
+    - [Composite Definition](#composite-definition)
+    - [Composition Example](#composition-example)
+    - [Composition Summary](#composition-summary)
+  - [Decorator](#decorator)
+    - [Decorator Definition](#decorator-definition)
+    - [Decorator Example](#decorator-example)
+    - [Decorator Summary](#decorator-summary)
+
 ## Introduction
 
 - Design patters are common architectual approaches
@@ -58,7 +102,7 @@ Another term that we use quite often is called separation of concerns. Separatio
 
 Then you separate those into separate components so as to make the entire system easier to figure out, easier to manage, easier to refactor as well.
 
-### Open Close Principle
+### O -> Open Close Principle
 
 First of all, the idea of the open close principle is that classes are open for extension, but close for modification, meaning you never jump into an existing class and start to modify it unless you absolutely have to.
 
@@ -70,11 +114,11 @@ So it's not a great thing.
 
 So a better approach is to basically use use inheritance or use some sort of way of extending functionality.
 
-### Liskov Substitution Principle
+### L -> Liskov Substitution Principle
 
 So essentially, the LSP, the Liskov Substitution Principle, says that if you have, let's say, a function which takes a base class like rectangle, it should be able to take a derived class like square without breaking the functionality in any way or ""you should be able to use any derived class instead of a parent class and have it behave in the same manner without modification"
 
-### Interface Segregation Principle
+### I -> Interface Segregation Principle
 
 So the interface segregation principle basically means that you have to segregate or split up interfaces into different parts so the people don't implement more than what they need.
 
@@ -82,7 +126,7 @@ So, for example, if you want to formalize the contract that you would have for a
 
 So that's that's pretty much it then.
 
-### Dependency Inversion Principle
+### D -> Dependency Inversion Principle
 
 The dependency inversion principle doesn't have anything directly to do with dependency injection, another term that you might have heard thrown around in different programming languages.
 
@@ -956,3 +1000,125 @@ clientCode2(tree, simple);
 - Composite design pattern lets us treat both types of objects uniformly
 - Javascript supports iteration with *Symbol.iterator*
 - A single object can make itself iterable by *yielding* **this**
+
+## Decorator
+
+Adding behavior without altering the class itself
+
+- Want to augment an object with additional functionality
+- Do not want to rewrite or alter existing code (OCP)
+- Want to keep new functionality separate (SRP)
+- Need to be able to interact with existing structures
+- Two options:
+  - Inherit from required object (if possible)
+  - Build a decorator, which simply references the decorated object(s)
+
+### Decorator Definition
+
+Facilitates the addition of behaviors to individual objects without inheriting from them
+
+### Decorator Example
+
+```typescript
+/**
+ * The base Component interface defines operations that can be altered by
+ * decorators.
+ */
+interface Component {
+    operation(): string;
+}
+
+/**
+ * Concrete Components provide default implementations of the operations. There
+ * might be several variations of these classes.
+ */
+class ConcreteComponent implements Component {
+    public operation(): string {
+        return 'ConcreteComponent';
+    }
+}
+
+/**
+ * The base Decorator class follows the same interface as the other components.
+ * The primary purpose of this class is to define the wrapping interface for all
+ * concrete decorators. The default implementation of the wrapping code might
+ * include a field for storing a wrapped component and the means to initialize
+ * it.
+ */
+class Decorator implements Component {
+    protected component: Component;
+
+    constructor(component: Component) {
+        this.component = component;
+    }
+
+    /**
+     * The Decorator delegates all work to the wrapped component.
+     */
+    public operation(): string {
+        return this.component.operation();
+    }
+}
+
+/**
+ * Concrete Decorators call the wrapped object and alter its result in some way.
+ */
+class ConcreteDecoratorA extends Decorator {
+    /**
+     * Decorators may call parent implementation of the operation, instead of
+     * calling the wrapped object directly. This approach simplifies extension
+     * of decorator classes.
+     */
+    public operation(): string {
+        return `ConcreteDecoratorA(${super.operation()})`;
+    }
+}
+
+/**
+ * Decorators can execute their behavior either before or after the call to a
+ * wrapped object.
+ */
+class ConcreteDecoratorB extends Decorator {
+    public operation(): string {
+        return `ConcreteDecoratorB(${super.operation()})`;
+    }
+}
+
+/**
+ * The client code works with all objects using the Component interface. This
+ * way it can stay independent of the concrete classes of components it works
+ * with.
+ */
+function clientCode(component: Component) {
+    // ...
+
+    console.log(`RESULT: ${component.operation()}`);
+
+    // ...
+}
+
+/**
+ * This way the client code can support both simple components...
+ */
+const simple = new ConcreteComponent();
+console.log('Client: I\'ve got a simple component:');
+clientCode(simple);
+console.log('');
+
+/**
+ * ...as well as decorated ones.
+ *
+ * Note how decorators can wrap not only simple components but the other
+ * decorators as well.
+ */
+const decorator1 = new ConcreteDecoratorA(simple);
+const decorator2 = new ConcreteDecoratorB(decorator1);
+console.log('Client: Now I\'ve got a decorated component:');
+clientCode(decorator2);
+```
+
+### Decorator Summary
+
+- A decorator keeps the reference to the decorated object(s)
+- Add utility fields and methods to augment the object's features
+- May or may not forward calls to the underlying object
