@@ -218,3 +218,28 @@ A contruct which adapts an existing interface X to conform to the required inter
 - Determine the API you have and the API you need
 - Create a component which aggregates (has a reference to, ...) the adaptee
 - Intermediate representations can pile up: use caching and other optimizations
+
+## Bridge
+
+Conecting components together through abstractions
+
+- Bridge prevents a "Cartesian Product" complexity explosion
+- Example:
+  - Base class ThreadScheduler
+  - Can be preemptive or cooperative
+  - Can run on Windows or Unix
+  - End up with with a 2x2 scenario:
+  WindowsPTS, UnixPTS, WindowsCTS, UnixCTS
+- Bridge pattern avoids the entity explosion
+
+## Bridge Definition
+
+A mechanism that decouples an interface (hierarchy) from an implementation (hierarchy)
+
+Reminder: JS has duck typing, so definitions of interfaces are not strictly necessary
+
+### Bridge Summary
+
+- Decouple abstraction from implementation
+- Both can exist as hierarchies
+- A stronger form of encapsulation
