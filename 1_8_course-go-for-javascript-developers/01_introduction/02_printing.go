@@ -13,3 +13,9 @@ func printWithNoNewLine(text string) {
 func printFormat(text string, values ...any) {
 	fmt.Printf(text, values[0], values[1], values[2])
 }
+
+func printMain() {
+	fmt.Println("Hello, World!")
+
+	fmt.Printf("Hello, my name is %s. I have been %d years living in %s.\n", "Sebastian", 30, "Colombia")
+}
