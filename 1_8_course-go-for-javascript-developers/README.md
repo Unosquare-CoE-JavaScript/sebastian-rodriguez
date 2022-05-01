@@ -9,6 +9,11 @@
     - [Printing](#printing)
     - [Types](#types)
     - [Control Structures](#control-structures)
+    - [Functions](#functions)
+    - [Arrays](#arrays)
+    - [Slices](#slices)
+      - [MAKE](#make)
+    - [Maps](#maps)
 
 ## Go History
 
@@ -111,3 +116,42 @@ The three main control structures are:
 - For-Range
 
 The *for* control flow can be wrapped in a label and can be use inside the reserved keywords: *break* and *continue*
+
+### Functions
+
+A function in go starts with reserved keyword *func* with a *name* then the parameters of the functions (*name* *type*) and optionally you can add the return *type* and finally the *body of the function*
+
+### Arrays
+
+Arrays allow you to store multiple elements of the same type in a variable in a particular order.
+
+An array is a data structure that consists of a collection of elements of a single type or simply you can say a special variable, which can hold more than one value at a time. The values an array holds are called its elements or items. An array holds a specific number of elements, and it cannot grow or shrink. Different data types can be handled as elements in arrays such as Int, String, Boolean, and others. The index of the first element of any dimension of an array is 0, the index of the second element of any array dimension is 1, and so on.
+
+### Slices
+
+Go has slices which do not encode the size of the collection and instead can have any size.
+
+The slice type which allows us to have collections of any size. The syntax is very similar to arrays, you just omit the size when declaring them
+
+Introduction of Slices, managing collections of data with slices and adding and removing elements from a slice.
+
+A slice is a flexible and extensible data structure to implement and manage collections of data. Slices are made up of multiple elements, all of the same type. A slice is a segment of dynamic arrays that can grow and shrink as you see fit. Like arrays, slices are index-able and have a length. Slices have a capacity and length property.
+
+SLICES
+Segments of an underlying array
+(+MAKE)
+Must be associated with space in memory
+
+#### MAKE
+
+According to the docs:
+
+Make "Initializes and allocates space in memory for a slice, map, or channel"
+
+### Maps
+
+A map is a data structure that provides you with an unordered collection of key/value pairs (maps are also sometimes called associative arrays in Php, hash tables in Java, or dictionaries in Python). Maps are used to look up a value by its associated key. You store values into the map based on a key.
+
+The strength of a map is its ability to retrieve data quickly based on the key. A key works like an index, pointing to the value you associate with that key.
+
+A map is implemented using a hash table, which is providing faster lookups on the data element and you can easily retrieve a value by providing the key. Maps are unordered collections, and there's no way to predict the order in which the key/value pairs will be returned. Every iteration over a map could return a different order.
