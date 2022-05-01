@@ -5,6 +5,7 @@
   - [Go Features](#go-features)
   - [Go Motivation](#go-motivation)
   - [Go vs. Javascript](#go-vs-javascript)
+  - [Go Tooling](#go-tooling)
   - [Language Features](#language-features)
     - [Printing](#printing)
     - [Types](#types)
@@ -14,6 +15,7 @@
     - [Slices](#slices)
       - [MAKE](#make)
     - [Maps](#maps)
+    - [Structs](#structs)
 
 ## Go History
 
@@ -66,6 +68,8 @@ Combine:
     - Convention, build in tooling and linters
   - JS: Fluid Opinions
     - Subjective to the mood that day
+
+## Go Tooling
 
 ## Language Features
 
@@ -155,3 +159,11 @@ A map is a data structure that provides you with an unordered collection of key/
 The strength of a map is its ability to retrieve data quickly based on the key. A key works like an index, pointing to the value you associate with that key.
 
 A map is implemented using a hash table, which is providing faster lookups on the data element and you can easily retrieve a value by providing the key. Maps are unordered collections, and there's no way to predict the order in which the key/value pairs will be returned. Every iteration over a map could return a different order.
+
+### Structs
+
+A struct (short for "structure") is a collection of data fields with declared data types. Golang has the ability to declare and create own data types by combining one or more types, including both built-in and user-defined types. Each data field in a struct is declared with a known type, which could be a built-in type or another user-defined type.
+
+Structs are the only way to create concrete user-defined types in Golang. Struct types are declared by composing a fixed set of unique fields. Structs can improve modularity and allow to create and pass complex data structures around the system. You can also consider Structs as a template for creating a data record, like an employee record or an e-commerce product.
+
+The declaration starts with the keyword type, then a name for the new struct, and finally the keyword struct. Within the curly brackets, a series of data fields are specified with a name and a type.
