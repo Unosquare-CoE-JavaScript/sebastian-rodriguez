@@ -49,3 +49,62 @@ A *mut*ual *ex*clusion lock and protect memory access
 - Provide a safe way for goroutines to communicate
 
 "Don't communicate by sharing memory, share memory by communication" - Rob Pike
+
+```go
+// create a channel
+ch := make(chan int)
+
+// create a buffered channel
+ch := make(chan int, 5)
+```
+
+### Channel Types
+
+- Bidirectional channel -> Default
+- Send-only channel
+- Receive-only channel
+
+```go
+ch := make(chan int)
+
+// Bidirectional
+func myFunction(ch chan int) {...}
+
+// Send-only channel
+func myFunction(ch chan<- int) {...}
+
+// Receive-only channel
+func myFunction(ch <-chan int) {...}
+```
+
+### Closing Channels
+
+- Closed via the built-in close function
+- Cannot check for closed channel!
+- Sending new message triggers a panic
+- Receiving messages okay
+  - If buffered, all buffered messages available
+  - If unbuffered, or buffer empty, receive zero-value
+- Use comma okay syntax to check
+
+### Control Flow
+
+- If statement
+- For loops
+- Select statements
+
+#### Select Statement
+
+```go
+ch1 := make(chan int)
+ch2 := make(chan string)
+
+select {
+  case i := <-ch1;
+    ...
+  case ch2 <- "hello":
+    ...
+  default:
+    // use default case for non-blocking select
+}
+```
