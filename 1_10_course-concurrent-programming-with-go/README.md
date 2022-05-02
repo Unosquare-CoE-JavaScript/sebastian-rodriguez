@@ -25,6 +25,27 @@
 
 - Allow goroutines to coordinate their work
 
+### Overview
+
+"Package sync provides basic synchronization primitives such as mutual exclusion locks. Other than the Once and WaitGroup types, most are intended for use by low-level library routines. Higher-level synchronization is better done via channels and communication.
+
+Values containing the types defined in this package should not be copied."
+
+### Challenges with Concurrency
+
+- Coordinating Tasks -> WaitGroups - Channels
+- Shared Memory -> Mutexes - Channels
+
+### sync.WaitGroup
+
+A WaitGroup waits for a collection of goroutines to finish
+
+### sync.Mutex
+
+A *mut*ual *ex*clusion lock and protect memory access
+
 ## Channels
 
 - Provide a safe way for goroutines to communicate
+
+"Don't communicate by sharing memory, share memory by communication" - Rob Pike
