@@ -6,6 +6,8 @@
   - [Go Motivation](#go-motivation)
   - [Go vs. Javascript](#go-vs-javascript)
   - [Go Tooling](#go-tooling)
+    - [Commands](#commands)
+    - [Packages](#packages)
   - [Language Features](#language-features)
     - [Printing](#printing)
     - [Types](#types)
@@ -16,6 +18,7 @@
       - [MAKE](#make)
     - [Maps](#maps)
     - [Structs](#structs)
+  - [Testing](#testing)
 
 ## Go History
 
@@ -70,6 +73,36 @@ Combine:
     - Subjective to the mood that day
 
 ## Go Tooling
+
+### Commands
+
+```
+go run main.go
+go install
+go build
+go fmt main.go
+go list
+go vet
+go doc fmt.Print
+go get golang.org/x/lint/golint
+golint
+```
+
+### Packages
+
+```go
+package main
+
+import (
+  "fmt"
+  "math"
+  "reflect"
+)
+```
+
+In the most basic terms, A package is nothing but a directory inside your Go workspace containing one or more Go source files, or other Go packages.
+
+Every Go source file belongs to a package.
 
 ## Language Features
 
@@ -167,3 +200,25 @@ A struct (short for "structure") is a collection of data fields with declared da
 Structs are the only way to create concrete user-defined types in Golang. Struct types are declared by composing a fixed set of unique fields. Structs can improve modularity and allow to create and pass complex data structures around the system. You can also consider Structs as a template for creating a data record, like an employee record or an e-commerce product.
 
 The declaration starts with the keyword type, then a name for the new struct, and finally the keyword struct. Within the curly brackets, a series of data fields are specified with a name and a type.
+
+## Testing
+
+```go
+// averange.go
+// averange_test.go
+
+package utils
+
+import "testing"
+
+func TestAverange(t *testing.T) {
+  expected := 4
+  actual := utils.averange(1,2,3)
+
+  if actual != expected {
+    t.ErrorF("Averange was incorrect! Expected %d, Actual %: %d", expected, actual)
+  }
+}
+
+// go test
+```
