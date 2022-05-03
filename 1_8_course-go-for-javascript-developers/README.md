@@ -20,6 +20,11 @@
     - [Structs](#structs)
     - [Pointers](#pointers)
   - [Testing](#testing)
+  - [Error Handling](#error-handling)
+    - [Error](#error)
+    - [Panic](#panic)
+    - [Defer](#defer)
+    - [Recover](#recover)
 
 ## Go History
 
@@ -251,3 +256,29 @@ func TestAverange(t *testing.T) {
 
 // go test
 ```
+
+## Error Handling
+
+You F***** UP
+
+### Error
+
+- Indicates that something bad happened, but it might be possible to continue running the program
+- ie: A function that intentionally returns an error if domething goues wrong
+
+### Panic
+
+- Happens at runtime
+- Something happended that was fatal to your program and program stop execution
+- ex: Trying to open a file that doesn't exist
+
+### Defer
+
+In the Go programming language, defer is a keyword that allows developers to delay the execution of a function until the current function returns. What throws some people off is that the deferred function’s arguments are evaluated immediately, but the function itself doesn’t fire until the wrapping function exits.
+
+### Recover
+
+- **Panic** is called during a runtime error and fatally kill the program
+- **Recover** tells Go what to do when that happens
+  - Returns what passed to *panic*
+- Recover must be paired with **defer**, which will fire event after a panic
