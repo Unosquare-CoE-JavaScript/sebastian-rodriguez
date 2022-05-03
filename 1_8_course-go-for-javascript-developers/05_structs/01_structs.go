@@ -22,6 +22,9 @@ func describeUser(u User) string {
 }
 
 func describeGroup(ug Group) string {
+	if len(ug.Users) > 2 {
+		ug.SpaceAvailable = false
+	}
 	return fmt.Sprintf("This group has %d users.\nThe newest user is %s %s.\nAccepting New Users %t", len(ug.Users), ug.NewestUser.FirstName, ug.NewestUser.LastName, ug.SpaceAvailable)
 }
 
