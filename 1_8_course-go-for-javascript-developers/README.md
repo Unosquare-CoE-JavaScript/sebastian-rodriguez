@@ -18,6 +18,7 @@
       - [MAKE](#make)
     - [Maps](#maps)
     - [Structs](#structs)
+    - [Pointers](#pointers)
   - [Testing](#testing)
 
 ## Go History
@@ -200,6 +201,34 @@ A struct (short for "structure") is a collection of data fields with declared da
 Structs are the only way to create concrete user-defined types in Golang. Struct types are declared by composing a fixed set of unique fields. Structs can improve modularity and allow to create and pass complex data structures around the system. You can also consider Structs as a template for creating a data record, like an employee record or an e-commerce product.
 
 The declaration starts with the keyword type, then a name for the new struct, and finally the keyword struct. Within the curly brackets, a series of data fields are specified with a name and a type.
+
+### Pointers
+
+"A ***pointer*** in Go is a variable that holds the ***memory location*** of that variable instead of a copy of its value
+
+Pointers in Go programming language is a variable that is used to store the memory address of another variable. Pointers in Golang is also termed as the special variables. The variables are used to store some data at a particular memory address in the system. The memory address is always found in hexadecimal format(starting with 0x like 0xFFAAF etc.).
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+
+  var name string
+  var namePointer *string
+
+  fmt.Println(name)
+  fmt.Println(namePointer)
+  fmt.Println(&name)
+
+}
+```
+
+- Pointer type definitions are indicated with a * next to the ***type name***
+  - Indicate that variable will *point to a memory location*
+- Pointer vriable *calues* are visible with a * next to the ***variable name***
+- To *read through* a variable to see the pointer address use a & next to the ***pointer variable name***
 
 ## Testing
 
