@@ -1,0 +1,19 @@
+{
+  "name": "1_7_course-design-patterns-in-javascript",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "author": "@Seromarin",
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.25",
+    "ts-node": "^10.7.0",
+    "vite": "^2.9.5",
+    "vitest": "^0.9.4"
+  },
+  "dependencies": {
+    "consola": "^2.15.3"
+  }
+}
