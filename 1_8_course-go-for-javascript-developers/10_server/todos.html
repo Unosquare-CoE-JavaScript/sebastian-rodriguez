@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{.PageTitle}}</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+      async
+    ></script>
+  </head>
+  <body>
+    <h1>All Todos</h1>
+    <form action="/add-todo" method="POST">
+      <input type="text" id="title" name="title" placeholder="Title">
+      <textarea name="content" id="details" placeholder="Details..."></textarea>
+      <input type="submit" value="Add"></input>
+    </form>
+    <div class="list">
+      {{if not .PageTodos }}
+        <h2>No Todos</h2>
+      {{else}}
+        <ul>
+          {{range .PageTodos}}
+          <li>
+            <h2>{{.Title}}</h2>
+            <p>{{.Content}}</p>
+            <form action="/delete-todo" method="POST">
+              <input type="hidden" name="id" value="{{.ID}}">
+              <input type="submit" value="Delete">
+            </form>
+          </li>
+          {{end}}
+        </ul>
+      {{end}}
+    </div>
+    <script type="text/javascript">
+    </script>
+  </body>
+</html>
