@@ -22,6 +22,8 @@
     - [Methods](#methods)
     - [Interfaces](#interfaces)
       - [The Empty Interface (interface{})](#the-empty-interface-interface)
+  - [Concurrency](#concurrency)
+    - [Goroutines](#goroutines)
   - [Testing](#testing)
   - [Error Handling](#error-handling)
     - [Error](#error)
@@ -265,6 +267,14 @@ The interface gives the developer flexibility where they can write a code in suc
   - These can be used by code that expects an unknown type
 - Allows you to call methods and functions on types when you aren't entirely sure what will be expected
 - Think the **any** type in typescript
+
+## Concurrency
+
+### Goroutines
+
+- A **Goroutine** is a lightweight thread managed by the Go runtime
+- Implemented by adding the **go** keyword before executing a function
+- Tells go to spin up a new thread to do that thing
 
 ## Testing
 
