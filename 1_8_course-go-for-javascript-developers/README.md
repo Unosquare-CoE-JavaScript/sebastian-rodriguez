@@ -20,6 +20,8 @@
     - [Structs](#structs)
     - [Pointers](#pointers)
     - [Methods](#methods)
+    - [Interfaces](#interfaces)
+      - [The Empty Interface (interface{})](#the-empty-interface-interface)
   - [Testing](#testing)
   - [Error Handling](#error-handling)
     - [Error](#error)
@@ -249,6 +251,20 @@ func some_func_name(arguments) return_values
 // Method
 func (receiver receiver_type) some_func_name(arguments) return_values
 ```
+
+### Interfaces
+
+A set of behaviors that define a type
+
+The interface gives the developer flexibility where they can write a code in such a way that whoever will use the interface they will define the methods of the interface inside them according to their uses.
+
+#### The Empty Interface (interface{})
+
+- Specifies zero methods
+- An empty interface may hold values of any type
+  - These can be used by code that expects an unknown type
+- Allows you to call methods and functions on types when you aren't entirely sure what will be expected
+- Think the **any** type in typescript
 
 ## Testing
 
