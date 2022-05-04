@@ -19,6 +19,7 @@
     - [Maps](#maps)
     - [Structs](#structs)
     - [Pointers](#pointers)
+    - [Methods](#methods)
   - [Testing](#testing)
   - [Error Handling](#error-handling)
     - [Error](#error)
@@ -234,6 +235,20 @@ func main() {
   - Indicate that variable will *point to a memory location*
 - Pointer vriable *calues* are visible with a * next to the ***variable name***
 - To *read through* a variable to see the pointer address use a & next to the ***pointer variable name***
+
+### Methods
+
+A method in golang is nothing but a function with a receiver. A receiver is an instance of some specific type such as struct, but it can be an instance of any other custom type. So basically when you attach a function to a type, then that function becomes a method for that type.
+
+```go
+// Function
+func some_func_name(arguments) return_values
+
+//vs
+
+// Method
+func (receiver receiver_type) some_func_name(arguments) return_values
+```
 
 ## Testing
 

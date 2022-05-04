@@ -25,6 +25,14 @@ func describeGroup(ug Group) string {
 	return fmt.Sprintf("This group has %d users.\nThe newest user is %s %s.\nAccepting New Users %t", len(ug.Users), ug.NewestUser.FirstName, ug.NewestUser.LastName, ug.SpaceAvailable)
 }
 
+func (u *User) describe() string {
+	return fmt.Sprintf("ID: %d\nFirst Name: %s\nLast Name: %s\nEmail: %s", u.ID, u.FirstName, u.LastName, u.Email)
+}
+
+func (ug *Group) describe() string {
+	return fmt.Sprintf("This group has %d users.\nThe newest user is %s %s.\nAccepting New Users %t", len(ug.Users), ug.NewestUser.FirstName, ug.NewestUser.LastName, ug.SpaceAvailable)
+}
+
 func main() {
 	u := User{
 		ID:        1,
@@ -40,6 +48,7 @@ func main() {
 	fmt.Println("Email: ", u.Email)
 
 	fmt.Println("User Description:", describeUser(u))
+	fmt.Println("User Description Method:", u.describe())
 
 	u2 := User{
 		ID:        2,
@@ -68,4 +77,5 @@ func main() {
 	}
 
 	fmt.Println("Group Description:", describeGroup(ug))
+	fmt.Println("Group Description Method:", ug.describe())
 }
