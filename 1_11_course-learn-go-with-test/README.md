@@ -13,6 +13,7 @@
     - [Constants](#constants)
     - [Switch](#switch)
     - [Iteration](#iteration)
+    - [Array & Slices](#array--slices)
 
 ## Objectives
 
@@ -83,9 +84,9 @@ If you don't have godoc command, then maybe you are using the newer version of G
 - Writing the smallest amount of code to make it pass so we know we have working software
 - Then refactor, backed with the safety of our tests to ensure we have well-crafted code that is easy to work with
 
-In our case we've gone from Hello() to Hello("name"), to Hello("name", "French") in small, easy to understand steps.
+TDD is a skill that needs practice to develop, but by breaking problems down into smaller components that you can test, you will have a much easier time writing software.
 
-This is of course trivial compared to "real world" software but the principles still stand. TDD is a skill that needs practice to develop, but by breaking problems down into smaller components that you can test, you will have a much easier time writing software.
+It is important to question the value of your tests. It should not be a goal to have as many tests as possible, but rather to have as much confidence as possible in your code base. Having too many tests can turn in to a real problem and it just adds more overhead in maintenance. Every test has a cost.
 
 ## Document code
 
@@ -115,3 +116,25 @@ When you have lots of if statements checking a particular value it is common to 
 ### Iteration
 
 To do stuff repeatedly in Go, you'll need for. In Go there are no while, do, until keywords, you can only use for. Which is a good thing!
+
+### Array & Slices
+
+Arrays allow you to store multiple elements of the same type in a variable in a particular order.
+
+When you have an array, it is very common to have to iterate over them. So let's use our new-found knowledge of for to make a Sum function. Sum will take an array of numbers and return the total.
+
+Arrays have a fixed capacity which you define when you declare the variable. We can initialize an array in two ways:
+
+- `[N]type{value1, value2, ..., valueN}` e.g. `numbers := [5]int{1, 2, 3, 4, 5}`
+- `[...]type{value1, value2, ..., valueN}` e.g. `numbers := [...]int{1, 2, 3, 4, 5}`
+
+It is sometimes useful to also print the inputs to the function in the error message. Here, we are using the %v placeholder to print the "default" format, which works well for arrays.
+
+An interesting property of arrays is that the size is encoded in its type. If you try to pass an `[4]int` into a function that expects `[5]int`, it won't compile. They are different types so it's just the same as trying to pass a string into a function that wants an int.
+
+You may be thinking it's quite cumbersome that arrays have a fixed length, and most of the time you probably won't be using them!
+
+Go has slices which do not encode the size of the collection and instead can have any size.
+
+the slice type which allows us to have collections of any size. The syntax is very similar to arrays, you just omit the size when declaring them
+`mySlice := []int{1,2,3}` rather than `myArray := [3]int{1,2,3}`
