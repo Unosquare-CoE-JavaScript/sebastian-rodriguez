@@ -12,6 +12,7 @@
   - [Language Features](#language-features)
     - [Constants](#constants)
     - [Switch](#switch)
+    - [Iteration](#iteration)
 
 ## Objectives
 
@@ -111,3 +112,6 @@ Any literal is a constant in Go. Some of the constants in Go would be:
 
 When you have lots of if statements checking a particular value it is common to use a switch statement instead. We can use switch to refactor the code to make it easier to read and more extensible if we wish to add more language support later
 
+### Iteration
+
+To do stuff repeatedly in Go, you'll need for. In Go there are no while, do, until keywords, you can only use for. Which is a good thing!
