@@ -5,6 +5,7 @@
   - [**How to test**](#how-to-test)
   - [**Writing test**](#writing-test)
     - [**if**](#if)
+    - [**nil**](#nil)
     - [**Declaring variables**](#declaring-variables)
     - [**t.Errorf**](#terrorf)
   - [**Go doc**](#go-doc)
@@ -20,6 +21,7 @@
       - [**Interfaces**](#interfaces)
         - [**Empty Interface**](#empty-interface)
         - [**Decoupling**](#decoupling)
+      - [**Pointers**](#pointers)
 
 ## **Objectives**
 
@@ -67,6 +69,12 @@ We've covered some new topics:
 ### **if**
 
 If statements in Go are very much like other programming languages.
+
+### **nil**
+
+- Pointers can be nil
+- When a function returns a pointer to something, you need to make sure you check if it's nil or you might raise a runtime exception - the compiler won't help you here.
+- Useful for when you want to describe a value that could be missing
 
 ### **Declaring variables**
 
@@ -176,3 +184,11 @@ An interface is empty if it has no functions at all. An empty interface holds an
 Notice how our helper does not need to concern itself with whether the shape is a Rectangle or a Circle or a Triangle. By declaring an interface, the helper is decoupled from the concrete types and only has the method it needs to do its job.
 
 This kind of approach of using interfaces to declare only what you need is very important in software design and will be covered in more detail in later sections.
+
+#### **Pointers**
+
+In Go, **when you call a function or a method the arguments are copied.**
+
+Pointers let us point to some values and then let us change them. So rather than taking a copy of the whole Wallet, we instead take a pointer to that wallet so that we can change the original values within it.
+
+These pointers to structs even have their own name: struct pointers and they are automatically dereferenced.
