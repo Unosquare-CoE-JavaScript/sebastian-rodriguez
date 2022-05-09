@@ -22,6 +22,7 @@
         - [**Empty Interface**](#empty-interface)
         - [**Decoupling**](#decoupling)
       - [**Pointers**](#pointers)
+    - [Maps](#maps)
 
 ## **Objectives**
 
@@ -192,3 +193,17 @@ In Go, **when you call a function or a method the arguments are copied.**
 Pointers let us point to some values and then let us change them. So rather than taking a copy of the whole Wallet, we instead take a pointer to that wallet so that we can change the original values within it.
 
 These pointers to structs even have their own name: struct pointers and they are automatically dereferenced.
+
+### Maps
+
+Maps are one of the most useful data structures. It can store in key-value pairs and doesn’t allow for duplicate keys. Now, we will learn how the Go programming language implements maps.
+
+An interesting property of maps is that you can modify them without passing as an address to it (e.g &myMap)
+
+```
+A map value is a pointer to a runtime.hmap structure.
+```
+
+Therefore, you should never initialize an empty map variable:
+
+Instead, you can initialize an empty map like we were doing above, or use the make keyword to create a map for you:
