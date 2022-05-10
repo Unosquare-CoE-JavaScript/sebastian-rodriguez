@@ -19,6 +19,7 @@
   - [**Channels**](#channels)
     - [**Always make channels**](#always-make-channels)
   - [**Optimizations**](#optimizations)
+  - [**Reflection**](#reflection)
   - [**Language Features**](#language-features)
     - [**Constants**](#constants)
     - [**Switch**](#switch)
@@ -27,12 +28,12 @@
     - [**Structs, methods & interfaces**](#structs-methods--interfaces)
       - [**Methods**](#methods)
       - [**Interfaces**](#interfaces)
-        - [**Empty Interface**](#empty-interface)
+        - [**Empty Interface - interface{}**](#empty-interface---interface)
         - [**Decoupling**](#decoupling)
       - [**Pointers**](#pointers)
-    - [Maps](#maps)
-    - [Defer](#defer)
-    - [Select](#select)
+    - [**Maps**](#maps)
+    - [**Defer**](#defer)
+    - [**Select**](#select)
 
 ## **Objectives**
 
@@ -198,6 +199,24 @@ For channels the zero value is nil and if you try and send to it with <- it will
 - http://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast
 - http://wiki.c2.com/?PrematureOptimization
 
+## **Reflection**
+
+Reflection in computing is the ability of a program to examine its own structure, particularly through types; it's a form of metaprogramming. It's also a great source of confusion.
+
+Ref:
+- [The Golang Reflection](https://go.dev/blog/laws-of-reflection)
+- [The laws of reflection](https://blog.golang.org/laws-of-reflection)
+
+As a writer of such a function, you have to be able to inspect anything that has been passed to you and try and figure out what the type is and what you can do with it. This is done using reflection. This can be quite clumsy and difficult to read and is generally less performant (as you have to do checks at runtime).
+
+**In short only use reflection if you really need to.**
+
+If you want polymorphic functions, consider if you could design it around an interface (not interface, confusingly) so that users can use your function with multiple types if they implement whatever methods you need for your function to work.
+
+Our function will need to be able to work with lots of different things. As always we'll take an iterative approach, writing tests for each new thing we want to support and refactoring along the way until we're done.
+
+---
+
 ## **Language Features**
 
 ### **Constants**
@@ -259,7 +278,7 @@ A method in golang is nothing but a function with a receiver. A receiver is an i
 
 In general programming interfaces are contracts that have a set of functions to be implemented to fulfill that contract. Go is no different. Go has great support for interfaces and they are implemented in an implicit way. They allow polymorphism in Go. In this post, we will talk about interfaces, what they are, and how they can be used.
 
-##### **Empty Interface**
+##### **Empty Interface - interface{}**
 
 An interface is empty if it has no functions at all. An empty interface holds any type. That’s why it is extremely useful in many cases. Below is the declaration of an empty interface.
 
@@ -279,7 +298,7 @@ Pointers let us point to some values and then let us change them. So rather than
 
 These pointers to structs even have their own name: struct pointers and they are automatically dereferenced.
 
-### Maps
+### **Maps**
 
 Maps are one of the most useful data structures. It can store in key-value pairs and doesn’t allow for duplicate keys. Now, we will learn how the Go programming language implements maps.
 
@@ -293,7 +312,7 @@ Therefore, you should never initialize an empty map variable:
 
 Instead, you can initialize an empty map like we were doing above, or use the make keyword to create a map for you:
 
-### Defer
+### **Defer**
 
 By prefixing a function call with defer it will now call that function at the end of the containing function.
 
@@ -303,7 +322,7 @@ You want this to execute at the end of the function, but keep the instruction ne
 
 Our refactoring is an improvement and is a reasonable solution given the Go features covered so far, but we can make the solution simpler.
 
-### Select
+### **Select**
 
 If you recall from the concurrency chapter, you can wait for values to be sent to a channel with `myVar := <-ch`. This is a blocking call, as you're waiting for a value.
 
