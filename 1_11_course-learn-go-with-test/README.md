@@ -13,6 +13,10 @@
   - [**Table Driven Test**](#table-driven-test)
   - [**Dependency Injection**](#dependency-injection)
     - [Mocks](#mocks)
+  - [Concurrency](#concurrency)
+    - [**A quick aside into a parallel(ism) universe..**](#a-quick-aside-into-a-parallelism-universe)
+  - [**Channels**](#channels)
+  - [**Optimizations**](#optimizations)
   - [**Language Features**](#language-features)
     - [**Constants**](#constants)
     - [**Switch**](#switch)
@@ -148,6 +152,37 @@ It is sometimes hard to know what level to test exactly but here are some though
 -Although Go lets you test private functions, I would avoid it as private functions are implementation detail to support public behaviour. Test the public behaviour. Sandi Metz describes private functions as being "less stable" and you don't want to couple your tests to them.
 - I feel like if a test is working with more than 3 mocks then it is a red flag - time for a rethink on the design
 - Use spies with caution. Spies let you see the insides of the algorithm you are writing which can be very useful but that means a tighter coupling between your test code and the implementation. Be sure you actually care about these details if you're going to spy on them
+
+## Concurrency
+
+For the purposes of the following, means 'having more than one thing in progress'. This is something that we do naturally everyday.
+
+For instance, this morning I made a cup of tea. I put the kettle on and then, while I was waiting for it to boil, I got the milk out of the fridge, got the tea out of the cupboard, found my favourite mug, put the teabag into the cup and then, when the kettle had boiled, I put the water in the cup.
+
+What I didn't do was put the kettle on and then stand there blankly staring at the kettle until it boiled, then do everything else once the kettle had boiled.
+
+If you can understand why it's faster to make tea the first way, then you can understand how we will make CheckWebsites faster. Instead of waiting for a website to respond before sending a request to the next website, we will tell our computer to make the next request while it is waiting.
+
+Normally in Go when we call a `function doSomething()` we wait for it to return (even if it has no value to return, we still wait for it to finish). We say that this operation is blocking - it makes us wait for it to finish. An operation that does not block in Go will run in a separate process called a goroutine. Think of a process as reading down the page of Go code from top to bottom, going 'inside' each function when it gets called to read what it does. When a separate process starts it's like another reader begins reading inside the function, leaving the original reader to carry on going down the page.
+
+To tell Go to start a new goroutine we turn a function call into a go statement by putting the keyword go in front of it: `go doSomething()`.
+
+Because the only way to start a goroutine is to put go in front of a function call, we often use anonymous functions when we want to start a goroutine. An anonymous function literal looks just the same as a normal function declaration, but without a name (unsurprisingly). You can see one above in the body of the for loop.
+
+Anonymous functions have a number of features which make them useful, two of which we're using above. Firstly, they can be executed at the same time that they're declared - this is what the () at the end of the anonymous function is doing. Secondly they maintain access to the lexical scope they are defined in - all the variables that are available at the point when you declare the anonymous function are also available in the body of the function.
+
+### **A quick aside into a parallel(ism) universe..**
+
+You might not get this result. You might get a panic message that we're going to talk about in a bit. Don't worry if you got that, just keep running the test until you do get the result above. Or pretend that you did. Up to you. Welcome to concurrency: when it's not handled correctly it's hard to predict what's going to happen. Don't worry - that's why we're writing tests, to help us know when we're handling concurrency predictably.
+
+## **Channels**
+
+Channels are a Go data structure that can both receive and send values. These operations, along with their details, allow communication between different processes.
+
+## **Optimizations**
+
+- http://wiki.c2.com/?MakeItWorkMakeItRightMakeItFast
+- http://wiki.c2.com/?PrematureOptimization
 
 ## **Language Features**
 
