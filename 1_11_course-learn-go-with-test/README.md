@@ -29,6 +29,7 @@
         - [**Decoupling**](#decoupling)
       - [**Pointers**](#pointers)
     - [Maps](#maps)
+    - [Defer](#defer)
 
 ## **Objectives**
 
@@ -278,3 +279,13 @@ A map value is a pointer to a runtime.hmap structure.
 Therefore, you should never initialize an empty map variable:
 
 Instead, you can initialize an empty map like we were doing above, or use the make keyword to create a map for you:
+
+### Defer
+
+By prefixing a function call with defer it will now call that function at the end of the containing function.
+
+Sometimes you will need to cleanup resources, such as closing a file or in our case closing a server so that it does not continue to listen to a port.
+
+You want this to execute at the end of the function, but keep the instruction near where you created the server for the benefit of future readers of the code.
+
+Our refactoring is an improvement and is a reasonable solution given the Go features covered so far, but we can make the solution simpler.
