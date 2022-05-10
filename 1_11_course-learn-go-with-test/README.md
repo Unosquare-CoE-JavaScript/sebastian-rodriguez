@@ -8,14 +8,16 @@
     - [**nil**](#nil)
     - [**Declaring variables**](#declaring-variables)
     - [**t.Errorf**](#terrorf)
+    - [**struct{}**](#struct)
   - [**Go doc**](#go-doc)
   - [**Document code**](#document-code)
   - [**Table Driven Test**](#table-driven-test)
   - [**Dependency Injection**](#dependency-injection)
     - [Mocks](#mocks)
-  - [Concurrency](#concurrency)
+  - [**Concurrency**](#concurrency)
     - [**A quick aside into a parallel(ism) universe..**](#a-quick-aside-into-a-parallelism-universe)
   - [**Channels**](#channels)
+    - [**Always make channels**](#always-make-channels)
   - [**Optimizations**](#optimizations)
   - [**Language Features**](#language-features)
     - [**Constants**](#constants)
@@ -30,6 +32,7 @@
       - [**Pointers**](#pointers)
     - [Maps](#maps)
     - [Defer](#defer)
+    - [Select](#select)
 
 ## **Objectives**
 
@@ -91,6 +94,10 @@ We're declaring some variables with the syntax varName := value, which lets us r
 ### **t.Errorf**
 
 We are calling the Errorf method on our t which will print out a message and fail the test. The f stands for format which allows us to build a string with values inserted into the placeholder values %q. When you made the test fail it should be clear how it works.
+
+### **struct{}**
+
+Why `struct{}` and not another type like a bool? Well, a chan struct{} is the smallest data type available from a memory perspective so we get no allocation versus a bool. Since we are closing and not sending anything on the chan, why allocate anything?
 
 ## **Go doc**
 
@@ -154,7 +161,7 @@ It is sometimes hard to know what level to test exactly but here are some though
 - I feel like if a test is working with more than 3 mocks then it is a red flag - time for a rethink on the design
 - Use spies with caution. Spies let you see the insides of the algorithm you are writing which can be very useful but that means a tighter coupling between your test code and the implementation. Be sure you actually care about these details if you're going to spy on them
 
-## Concurrency
+## **Concurrency**
 
 For the purposes of the following, means 'having more than one thing in progress'. This is something that we do naturally everyday.
 
@@ -179,6 +186,12 @@ You might not get this result. You might get a panic message that we're going to
 ## **Channels**
 
 Channels are a Go data structure that can both receive and send values. These operations, along with their details, allow communication between different processes.
+
+### **Always make channels**
+
+Notice how we have to use make when creating a channel; rather than say var ch chan struct{}. When you use var the variable will be initialised with the "zero" value of the type. So for string it is "", int it is 0, etc.
+
+For channels the zero value is nil and if you try and send to it with <- it will block forever because you cannot send to nil channels
 
 ## **Optimizations**
 
@@ -289,3 +302,13 @@ Sometimes you will need to cleanup resources, such as closing a file or in our c
 You want this to execute at the end of the function, but keep the instruction near where you created the server for the benefit of future readers of the code.
 
 Our refactoring is an improvement and is a reasonable solution given the Go features covered so far, but we can make the solution simpler.
+
+### Select
+
+If you recall from the concurrency chapter, you can wait for values to be sent to a channel with `myVar := <-ch`. This is a blocking call, as you're waiting for a value.
+
+What select lets you do is wait on multiple channels. The first one to send a value "wins" and the code underneath the case is executed.
+
+We use ping in our select to set up two channels, one for each of our URLs. Whichever one writes to its channel first will have its code executed in the select, which results in its URL being returned (and being the winner).
+
+After these changes, the intent behind our code is very clear and the implementation is actually simpler.
