@@ -12,6 +12,7 @@
   - [**Document code**](#document-code)
   - [**Table Driven Test**](#table-driven-test)
   - [**Dependency Injection**](#dependency-injection)
+    - [Mocks](#mocks)
   - [**Language Features**](#language-features)
     - [**Constants**](#constants)
     - [**Switch**](#switch)
@@ -119,6 +120,34 @@ Motivated by our tests we refactored the code so we could control where the data
 - Test our code If you can't test a function easily, it's usually because of dependencies hard-wired into a function or global state. If you have a global database connection pool for instance that is used by some kind of service layer, it is likely going to be difficult to test and they will be slow to run. DI will motivate you to inject in a database dependency (via an interface) which you can then mock out with something you can control in your tests.
 - Separate our concerns, decoupling where the data goes from how to generate it. If you ever feel like a method/function has too many responsibilities (generating data and writing to a db? handling HTTP requests and doing domain level logic?) DI is probably going to be the tool you need.
 - Allow our code to be re-used in different contexts The first "new" context our code can be used in is inside tests. But further on if someone wants to try something new with your function they can inject their own dependencies.
+
+### Mocks
+
+While this is a pretty trivial program, to test it fully we will need as always to take an iterative, test-driven approach.
+
+What do I mean by iterative? We make sure we take the smallest steps we can to have useful software.
+
+We don't want to spend a long time with code that will theoretically work after some hacking because that's often how developers fall down rabbit holes. It's an important skill to be able to slice up requirements as small as you can so you can have working software.
+
+Here's how we can divide our work up and iterate on it:
+- Print 3
+- Print 3, 2, 1 and Go!
+- Wait a second between each line
+
+Normally a lot of mocking points to bad abstraction in your code.
+
+**What people see here is a weakness in TDD but it is actually a strength, more often than not poor test code is a result of bad design or put more nicely, well-designed code is easy to test.**
+
+Try to make it so your tests are testing useful behaviour unless the implementation is really important to how the system runs.
+
+It is sometimes hard to know what level to test exactly but here are some thought processes and rules I try to follow:
+
+- The definition of refactoring is that the code changes but the behaviour stays the same. If you have decided to do some refactoring in theory you should be able to make the commit without any test changes. So when writing a test ask yourself
+  - Am I testing the behaviour I want, or the implementation details?
+  - If I were to refactor this code, would I have to make lots of changes to the tests?
+-Although Go lets you test private functions, I would avoid it as private functions are implementation detail to support public behaviour. Test the public behaviour. Sandi Metz describes private functions as being "less stable" and you don't want to couple your tests to them.
+- I feel like if a test is working with more than 3 mocks then it is a red flag - time for a rethink on the design
+- Use spies with caution. Spies let you see the insides of the algorithm you are writing which can be very useful but that means a tighter coupling between your test code and the implementation. Be sure you actually care about these details if you're going to spy on them
 
 ## **Language Features**
 
