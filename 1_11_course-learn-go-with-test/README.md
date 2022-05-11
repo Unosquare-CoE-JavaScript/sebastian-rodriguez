@@ -20,6 +20,7 @@
     - [**Always make channels**](#always-make-channels)
   - [**Optimizations**](#optimizations)
   - [**Reflection**](#reflection)
+  - [Sync](#sync)
   - [**Language Features**](#language-features)
     - [**Constants**](#constants)
     - [**Switch**](#switch)
@@ -214,6 +215,15 @@ As a writer of such a function, you have to be able to inspect anything that has
 If you want polymorphic functions, consider if you could design it around an interface (not interface, confusingly) so that users can use your function with multiple types if they implement whatever methods you need for your function to work.
 
 Our function will need to be able to work with lots of different things. As always we'll take an iterative approach, writing tests for each new thing we want to support and refactoring along the way until we're done.
+
+## Sync
+
+Package sync provides basic synchronization primitives such as mutual exclusion locks. Other than the Once and WaitGroup types, most are intended for use by low-level library routines. Higher-level synchronization is better done via channels and communication.
+
+Values containing the types defined in this package should not be copied.
+
+Ref:
+- (MutexOrChannel)[https://github.com/golang/go/wiki/MutexOrChannel]
 
 ---
 
