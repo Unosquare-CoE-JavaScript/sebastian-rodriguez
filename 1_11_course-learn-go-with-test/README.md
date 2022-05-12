@@ -21,6 +21,7 @@
   - [**Optimizations**](#optimizations)
   - [**Reflection**](#reflection)
   - [Sync](#sync)
+  - [Context](#context)
   - [**Language Features**](#language-features)
     - [**Constants**](#constants)
     - [**Switch**](#switch)
@@ -224,6 +225,22 @@ Values containing the types defined in this package should not be copied.
 
 Ref:
 - (MutexOrChannel)[https://github.com/golang/go/wiki/MutexOrChannel]
+
+## Context
+
+Software often kicks off long-running, resource-intensive processes (often in goroutines). If the action that caused this gets cancelled or fails for some reason you need to stop these processes in a consistent way through your application.
+
+If you don't manage this your snappy Go application that you're so proud of could start having difficult to debug performance problems.
+In this chapter we'll use the package context to help us manage long-running processes.
+
+Ref:
+- (Go Concurrency Patterns: Context)[https://go.dev/blog/context]
+
+> The context package provides functions to derive new Context values from existing ones. These values form a tree: when a Context is canceled, all Contexts derived from it are also canceled.
+
+>Incoming requests to a server should create a Context, and outgoing calls to servers should accept a Context. The chain of function calls between them must propagate the Context, optionally replacing it with a derived Context created using WithCancel, WithDeadline, WithTimeout, or WithValue. When a Context is canceled, all Contexts derived from it are also canceled.
+
+>At Google, we require that Go programmers pass a Context parameter as the first argument to every function on the call path between incoming and outgoing requests. This allows Go code developed by many different teams to interoperate well. It provides simple control over timeouts and cancelation and ensures that critical values like security credentials transit Go programs properly.
 
 ---
 
