@@ -3,3 +3,4 @@ coverage
 .env
 .trunk
 .markdownlint.yaml
+.DS_Store
