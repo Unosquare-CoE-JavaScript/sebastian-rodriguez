@@ -1,3 +1,5 @@
 node_modules
 coverage
 .env
+.trunk
+.markdownlint.yaml
