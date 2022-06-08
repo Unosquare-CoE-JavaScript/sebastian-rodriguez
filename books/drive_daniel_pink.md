@@ -18,7 +18,7 @@
 >
 > - Pink, Daniel H.. Drive (p. 8). Penguin Publishing Group. Kindle Edition.
 
-> Human beings, Deci said, have an “inherent tendency to seek out novelty and challenges, to extend and exercise their capacities, to explore, and to learn.” But this third drive was more fragile than the other two; it needed the right environment to survive. “One who is interested in developing and enhancing intrinsic motivation in children, employees, students, etc., should not concentrate on external-control systems such as monetary rewards,”
+> Human beings, Deci said, have an “inherent tendency to seek out novelty and challenges, to extend and exercise their capacities, to explore, and to learn.” But this third drive was more fragile than the other two; it needed the right environment to survive. “One who is interested in developing and enhancing intrinsic motivation in children, employees, students, etc., should not concentrate on external-control systems such as monetary rewards”
 >
 > - Pink, Daniel H.. Drive (p. 8). Penguin Publishing Group. Kindle Edition.
 
@@ -26,3 +26,30 @@
 >
 > - Pink, Daniel H.. Drive (p. 9). Penguin Publishing Group. Kindle Edition.
 
+## Part One. A new Operating System
+
+### Chapter 1. The Rise and Fall of Motivation 2.0
+
+> In our very early days—I mean very early days, say, fifty thousand years ago—the underlying assumption about human behavior was simple and true. We were trying to survive. From roaming the savannah to gather food to scrambling for the bushes when a saber-toothed tiger approached, that drive guided most of our behavior. Call this early operating system Motivation 1.0. (...) It worked well. Until it didn’t.
+>
+> - Pink, Daniel H.. Drive (p. 16). Penguin Publishing Group. Kindle Edition. 
+
+> Humans are more than the sum of our biological urges. That first drive still mattered—no doubt about that—but it didn’t fully account for who we are. We also had a second drive—to seek reward and avoid punishment more broadly. And it was from this insight that a new operating system—call it Motivation 2.0—arose. (...) But what this operating system lacked in enlightenment, it made up for in effectiveness. It worked well—extremely well. Until it didn’t.
+>
+> - Pink, Daniel H.. Drive (pp. 16-18). Penguin Publishing Group. Kindle Edition. 
+
+> For as long as any of us can remember, we’ve configured our organizations and constructed our lives around its bedrock assumption: The way to improve performance, increase productivity, and encourage excellence is to reward the good and punish the bad.
+>
+> - Pink, Daniel H.. Drive (pp. 17-18). Penguin Publishing Group. Kindle Edition. 
+
+> As the twentieth century progressed, as economies grew still more complex, and as the people in them had to deploy new, more sophisticated skills, the Motivation 2.0 approach encountered some resistance.
+>
+> - Pink, Daniel H.. Drive (p. 18). Penguin Publishing Group. Kindle Edition. 
+
+> Frederick Herzberg, a psychologist-turned-management professor, proposed that two key factors determined how people fared on the job. The first were “hygiene” factors—extrinsic rewards such as pay, working conditions, and job security. Their absence created dissatisfaction, but their presence didn’t lead to job satisfaction. The second were “motivators”—things like enjoyment of the work itself, genuine achievement, and personal growth. These internal desires were what really boosted both satisfaction and performance and were where managers ought to focus their attention.
+>
+> - Pink, Daniel H.. Drive (p. 18). Penguin Publishing Group. Kindle Edition. 
+
+> Motivation 2.0 still serves some purposes well. It’s just deeply unreliable. Sometimes it works; many times it doesn’t. And understanding its defects will help determine which parts to keep and which to discard as we fashion an upgrade. The glitches fall into three broad categories. Our current operating system has become far less compatible with, and at times downright antagonistic to: how we organize what we do; how we think about what we do; and how we do what we do.
+>
+> - Pink, Daniel H.. Drive (pp. 19-20). Penguin Publishing Group. Kindle Edition. 
