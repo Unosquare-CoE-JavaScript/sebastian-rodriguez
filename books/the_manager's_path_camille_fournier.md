@@ -41,3 +41,16 @@
 > “raising in public is considered to be a best practice because it helps the manager let everyone know that someone has done something laudable, and reinforces what positive behavior looks like.”
 
 > “It’s great when managers can identify and assign stretch projects that will help us grow and learn new things. Beyond assigning stretch projects, though, good managers will also help you understand the value of the work you’re doing even when it is not fun or glamorous. Your manager should be the person who shows you the larger picture of how your work fits into the team’s goals, and helps you feel a sense of purpose in the day-to-day work. The most mundane work can turn into a source of pride when you understand how it contributes to the overall success of the company.”
+
+#### Training and Career Growth
+
+> “As the main liaison between you and the bureaucracy of the company, your manager holds some responsibility for helping you find training and other resources for career growth. This may be helping you find a conference to attend or a class to take, helping you get a book you need, or pointing you to an expert somewhere else in the company who can help you learn something.”
+
+> “The other way your manager will contribute very directly to your career growth is via promotion and, probably, compensation. If your company has a promotion process, your manager will be involved in it in some fashion. For companies that do promotion via committee, your manager will guide you through the process of preparing your promotion packet”
+
+> “Managers usually cannot guarantee promotions, but good managers know what the system is looking for and can help you build those achievements and skills. Again, this only goes so far. **At more senior levels of work, opportunities for promotion are much more rare, and your manager may need you to find and propose the achievements that qualify you for the next level.**”
+
+> “I also advise you to find the best managers and mentors you can, and watch them work. Try to find people to work for who push you to succeed but also reward you for success, who inspire you to stretch yourself. Realize that stretching yourself is about more than just learning new technologies: great CTOs have strong communication skills, project management skills, and product sense, in addition to good technical sense. ”
+
+> “I encourage you to create and build a strong network of peers. One thing that early career engineers often don’t appreciate is how their current peers will turn into their future jobs. This peer group includes everyone from your schoolmates to your teammates to the people you meet at conferences and meetups. It’s OK to be a little bit shy, but most CTOs have to learn how to socialize with all sorts of people and create strong networks across companies.”
+
