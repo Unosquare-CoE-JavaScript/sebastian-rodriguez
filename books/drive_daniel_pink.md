@@ -77,3 +77,33 @@
 > One reason could be that traditional businesses are profit maximizers, which square perfectly with Motivation 2.0. These new entities are purpose maximizers—which are unsuited to this older operating system because they flout its very principles.
 >
 > - Pink, Daniel H.. Drive (pp. 23-24). Penguin Publishing Group. Kindle Edition. 
+
+##### How We Think About What We Do
+
+> Economics, she explained, wasn’t the study of money. It was the study of behavior. In the course of a day, each of us was constantly figuring the cost and benefits of our actions and then deciding how to act. Economists studied what people did, rather than what we said, because we did what was best for us. We were rational calculators of our economic self-interest.
+>
+> - Pink, Daniel H.. Drive (p. 24). Penguin Publishing Group. Kindle Edition. 
+
+But...
+
+> Kahneman and others in the field of behavioral economics agreed with my professor that economics was the study of human economic behavior. They just believed that we’d placed too much emphasis on the economic and not enough on the human. That hyperrational calculator-brained person wasn’t real. He was a convenient fiction.
+>
+> - Pink, Daniel H.. Drive (p. 25). Penguin Publishing Group. Kindle Edition. 
+
+So,
+
+> In real life our behavior is far more complex than the textbook allows and often confounds the idea that we’re purely rational. (…) In short, we are irrational—and predictably so, says economist Dan Ariely, author of Predictably Irrational, a book that offers an entertaining and engaging overview of behavioral economics.
+>
+> - Pink, Daniel H.. Drive (pp. 25-26). Penguin Publishing Group. Kindle Edition. 
+
+> In short, we are irrational—and predictably so, says economist Dan Ariely, author of Predictably Irrational, a book that offers an entertaining and engaging overview of behavioral economics.
+>
+> - Pink, Daniel H.. Drive (pp. 25-26). Penguin Publishing Group. Kindle Edition. 
+
+> Indeed, the very premise of extrinsic incentives is that we’ll always respond rationally to them. But even most economists don’t believe that anymore. Sometimes these motivators work. Often they don’t. And many times, they inflict collateral damage. In short, the new way economists think about what we do is hard to reconcile with Motivation 2.0.
+>
+> - Pink, Daniel H.. Drive (p. 26). Penguin Publishing Group. Kindle Edition. 
+
+> “Intrinsic motivation is of great importance for all economic activities. It is inconceivable that people are motivated solely or even mainly by external incentives.”
+>
+> - Pink, Daniel H.. Drive (pp. 26-27). Penguin Publishing Group. Kindle Edition. 
