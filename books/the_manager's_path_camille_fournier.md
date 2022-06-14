@@ -54,3 +54,26 @@
 
 > “I encourage you to create and build a strong network of peers. One thing that early career engineers often don’t appreciate is how their current peers will turn into their future jobs. This peer group includes everyone from your schoolmates to your teammates to the people you meet at conferences and meetups. It’s OK to be a little bit shy, but most CTOs have to learn how to socialize with all sorts of people and create strong networks across companies.”
 
+## How to Be Managed
+
+> “Developing a sense of ownership and authority for your own experiences at work, and not relying on your manager to set the entire tone for your relationship, is an important step in owning your career and workplace happiness.”
+
+### Spend Time Thinking About What You Want
+
+> “Your manager can point out opportunities for growth. She can show you projects. She can provide feedback on your areas of learning and development. But she cannot read your mind, and she cannot tell you what will make you happy. Whether you are brand new to the workplace or 20 years into your career, the onus of figuring out what you want to do, what you want to learn, and what will make you happy rests on your shoulders.”
+
+### You Are Responsible for Yourself
+
+> “Knowing yourself is step one. Step two is going after what you want.”
+
+> “Sometimes you will have to go against the cultural grain to set your own boundaries, and that will feel uncomfortable. On the flip side, sometimes if you want a bigger job, you will have to work more hours to get it.”
+
+> “You will not get everything you ask for, and asking is not usually a fun or comfortable experience. However, it’s the fastest way forward. (...) I can’t guarantee you that it’ll go well, but if you’ve set a goal for yourself, you owe it to yourself to do what you can to make it happen.”
+
+### Give Your Manager a Break
+
+> “ Her job is to do the best thing for the company and the team. It is not to do whatever it takes to make you happy all the time.”
+
+> “When you have a problem, instead of demanding that your manager solve it for you, try asking her for advice on how she might approach the problem. Asking for advice is always a good way to show respect and trust.”
+
+>
