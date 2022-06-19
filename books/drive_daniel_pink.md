@@ -107,3 +107,36 @@ So,
 > “Intrinsic motivation is of great importance for all economic activities. It is inconceivable that people are motivated solely or even mainly by external incentives.”
 >
 > - Pink, Daniel H.. Drive (pp. 26-27). Penguin Publishing Group. Kindle Edition. 
+
+##### How We Do What We Do
+
+> Begin with complexity. Behavioral scientists often divide what we do on the job or learn in school into two categories: “algorithmic” and “heuristic.” An algorithmic task is one in which you follow a set of established instructions down a single pathway to one conclusion. That is, there’s an algorithm for solving it. A heuristic task is the opposite. Precisely because no algorithm exists for it, you have to experiment with possibilities and devise a novel solution.
+>
+> - Pink, Daniel H.. Drive (p. 27). Penguin Publishing Group. Kindle Edition. 
+
+> Just as oxen and then forklifts replaced simple physical labor, computers are replacing simple intellectual labor.
+>
+> - Pink, Daniel H.. Drive (p. 28). Penguin Publishing Group. Kindle Edition.
+
+> The consulting firm McKinsey & Co. estimates that in the United States, only 30 percent of job growth now comes from algorithmic work, while 70 percent comes from heuristic work.9 A key reason: Routine work can be outsourced or automated; artistic, empathic, nonroutine work generally cannot.
+>
+> - Pink, Daniel H.. Drive (p. 28). Penguin Publishing Group. Kindle Edition. 
+
+> The implications for motivation are vast. Researchers such as Harvard Business School’s Teresa Amabile have found that external rewards and punishments—both carrots and sticks—can work nicely for algorithmic tasks. But they can be devastating for heuristic ones.
+>
+> - Pink, Daniel H.. Drive (pp. 28-29). Penguin Publishing Group. Kindle Edition. 
+
+> “Intrinsic motivation is conducive to creativity; controlling extrinsic motivation is detrimental to creativity.” In other words, the central tenets of Motivation 2.0 may actually impair performance of the heuristic, right-brain work on which modern economies depend.
+>
+> - Pink, Daniel H.. Drive (p. 29). Penguin Publishing Group. Kindle Edition. 
+
+> Partly because work has become more creative and less routine, it has also become more enjoyable. That, too, scrambles Motivation 2.0’s assumptions. This operating system rests on the belief that work is not inherently enjoyable—which is precisely why we must coax people with external rewards and threaten them with outside punishment.
+>
+> - Pink, Daniel H.. Drive (p. 29). Penguin Publishing Group. Kindle Edition. 
+
+> Routine, not-so-interesting jobs require direction; nonroutine, more interesting work depends on self-direction. One business leader, who didn’t want to be identified, said it plainly. When he conducts job interviews, he tells prospective employees: “If you need me to motivate you, I probably don’t want to hire you.”
+>
+> TO RECAP, Motivation 2.0 suffers from three compatibility problems. It doesn’t mesh with the way many new business models are organizing what we do—because we’re intrinsically motivated purpose maximizers, not only extrinsically motivated profit maximizers.
+>
+> - Pink, Daniel H.. Drive (pp. 30-31). Penguin Publishing Group. Kindle Edition.
+
