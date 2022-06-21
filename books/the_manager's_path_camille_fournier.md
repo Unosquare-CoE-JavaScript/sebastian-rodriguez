@@ -76,4 +76,36 @@
 
 > “When you have a problem, instead of demanding that your manager solve it for you, try asking her for advice on how she might approach the problem. Asking for advice is always a good way to show respect and trust.”
 
->
+### Choose Your Managers Wisely
+
+> “Your manager can make a huge difference in your career. So, as much as you can, consider not only the job, the company, and the pay, but also the manager when you are evaluating job opportunities.”
+
+> “Strong managers know how to play the game at their company. They can get you promoted; they can get you attention and feedback from important people.”
+
+> * “Plenty of great engineers make ineffective managers because they don’t know or want to deal with the politics of leadership in their companies.”
+
+> “A strong engineer may make a great mentor-manager to someone early in his career, but a terrible advocate-manager for someone who is more senior.”
+
+##  Chapter 2. Mentoring
+
+> “The first act of people management for many engineers is often unofficial. They find themselves, through the luck of the draw, mentoring someone.”
+
+### The Importance of Mentoring to Junior Team Members
+
+> “In a healthy organization, this onboarding mentorship role is used as an opportunity for both parties. The mentor gets the chance to see what it is like to have responsibility for another person, and the mentee gets an overseer who is focused on him alone, without other reports clamoring for his mentor’s attention.”
+
+### Being a Mentor
+
+> “This is an experience that not everyone will get: an opportunity to learn in a fairly safe way about the job of management, and the feeling of being responsible for another person.”
+
+> “For many mentors, the worst that can happen is that a) the mentee is a drain on their time and they get less coding work done, or b) they do such a poor job that someone whom the organization might otherwise want to hire/keep around has a bad experience and doesn’t join the organization, or opts to leave the organization sooner than she otherwise might.”
+
+> “Great talent is sometimes squandered by weak mentors who do little but ignore their charges, waste their time with trivial projects, or, worst of all, intimidate and belittle them out of ever wanting to join the organization.”
+
+#### Mentoring an Intern
+
+> “The first thing you need is some sort of project for this intern to work on.”
+
+> “The intern’s first few days will be similar to those of any new hire: onboarding, getting used to the office, meeting people, learning the systems. Sit with him as much as possible these first few days. Get him started installing the IDE and checking out the code. Touch base several times a day to make sure he’s not feeling lost or overwhelmed by the volume of new information. In the meantime, prepare yourself for his project.”
+
+> “Once you have a project, start applying your budding knowledge of project management to the task at hand. Is this project broken down into milestones? If not, spend a little time in the first few days of the intern’s tenure breaking it down. Walk through the breakdown with your intern. Does it make sense to him? Listen to his questions and answer them. Remember, you’re practicing skills that you will need should you decide in the future to become a manager. In this case, these skills are listening, communicating what needs to happen, and adjusting to his responses.”
