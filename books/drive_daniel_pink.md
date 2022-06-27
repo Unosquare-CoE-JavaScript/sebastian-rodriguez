@@ -140,3 +140,48 @@ So,
 >
 > - Pink, Daniel H.. Drive (pp. 30-31). Penguin Publishing Group. Kindle Edition.
 
+### Chapter 2. Seven Reason Carrots and Sticks (Often) Don't Work…
+
+> Motivation 2.0 is similar. At its heart are two elegant and simple ideas: 
+>
+> _Rewarding an activity will get you more of it. Punishing an activity will get you less of it._
+>
+> - Pink, Daniel H.. Drive (p. 32). Penguin Publishing Group. Kindle Edition. 
+
+> Of course, the starting point for any discussion of motivation in the workplace is a simple fact of life: People have to earn a living. Salary, contract payments, some benefits, a few perks are what I call “baseline rewards.” If someone’s baseline rewards aren’t adequate or equitable, her focus will be on the unfairness of her situation and the anxiety of her circumstance. You’ll get neither the predictability of extrinsic motivation nor the weirdness of intrinsic motivation. You’ll get very little motivation at all. **The best use of money as a motivator is to pay people enough to take the issue of money off the table.**
+>
+> - Pink, Daniel H.. Drive (p. 33). Penguin Publishing Group. Kindle Edition. 
+
+#### Less Of What We Want
+
+> “that Work consists of whatever a body is OBLIGED to do, and that Play consists of whatever a body is not obliged to do.”
+>
+> - Pink, Daniel H.. Drive (p. 34). Penguin Publishing Group. Kindle Edition. 
+
+> There are wealthy gentlemen in England who drive four-horse passenger-coaches twenty or thirty miles on a daily line, in the summer, because the privilege costs them considerable money; but if they were offered wages for the service, that would turn it into work and then they would resign.
+>
+> - Pink, Daniel H.. Drive (pp. 34-35). Penguin Publishing Group. Kindle Edition. 
+
+> In other words, rewards can perform a weird sort of behavioral alchemy: They can transform an interesting task into a drudge. They can turn play into work. And by diminishing intrinsic motivation, they can send performance, creativity, and even upstanding behavior toppling like dominoes. Let’s call this the Sawyer Effect.a
+>
+> - Pink, Daniel H.. Drive (p. 35). Penguin Publishing Group. Kindle Edition. 
+
+##### Intrinsic Motivation
+
+> (...) they referred to the counterintuitive consequences of extrinsic incentives as “the hidden costs of rewards.”
+>
+> - Pink, Daniel H.. Drive (p. 35). Penguin Publishing Group. Kindle Edition. 
+
+> To be clear, it wasn’t necessarily the rewards themselves that dampened the children’s interest. Remember: When children didn’t expect a reward, receiving one had little impact on their intrinsic motivation. Only contingent rewards—if you do this, then you’ll get that—had the negative effect. Why? “If-then” rewards require people to forfeit some of their autonomy. Like the gentlemen driving carriages for money instead of fun, they’re no longer fully controlling their lives. And that can spring a hole in the bottom of their motivational bucket, draining an activity of its enjoyment.
+>
+> - Pink, Daniel H.. Drive (p. 36). Penguin Publishing Group. Kindle Edition. 
+
+> “Careful consideration of reward effects reported in 128 experiments lead to the conclusion that tangible rewards tend to have a substantially negative effect on intrinsic motivation,” they determined. “When institutions—families, schools, businesses, and athletic teams, for example—focus on the short-term and opt for controlling people’s behavior,” they do considerable long-term damage.
+>
+> - Pink, Daniel H.. Drive (p. 37). Penguin Publishing Group. Kindle Edition. 
+
+> “People use rewards expecting to gain the benefit of increasing another person’s motivation and behavior, but in so doing, they often incur the unintentional and hidden cost of undermining that person’s intrinsic motivation toward the activity.”
+>
+> - Pink, Daniel H.. Drive (p. 37). Penguin Publishing Group. Kindle Edition. 
+
+> 
