@@ -184,4 +184,27 @@ So,
 >
 > - Pink, Daniel H.. Drive (p. 37). Penguin Publishing Group. Kindle Edition. 
 
-> 
+##### High Performance
+
+> “We find that financial incentives . . . can result in a negative impact on overall performance.”
+>
+> - Pink, Daniel H.. Drive (p. 39). Penguin Publishing Group. Kindle Edition. 
+
+> “Many existing institutions provide very large incentives for exactly the type of tasks we used here,” Ariely and his colleagues wrote. “Our results challenge [that] assumption. Our experiment suggests . . . that one cannot assume that introducing or raising incentives always improves performance.” Indeed, in many instances, contingent incentives—that cornerstone of how businesses attempt to motivate employees—may be “a losing proposition.”
+>
+> - Pink, Daniel H.. Drive (pp. 39-40). Penguin Publishing Group. Kindle Edition. 
+
+##### Creativity
+
+> In direct contravention to the core tenets of Motivation 2.0, an incentive designed to clarify thinking and sharpen creativity ended up clouding thinking and dulling creativity. Why? Rewards, by their very nature, narrow our focus. That’s helpful when there’s a clear path to a solution. They help us stare ahead and race faster. But “if-then” motivators are terrible for challenges like the candle problem. As this experiment shows, the rewards narrowed people’s focus and blinkered the wide view that might have allowed them to see new uses for old objects.
+>
+> - Pink, Daniel H.. Drive (p. 42). Penguin Publishing Group. Kindle Edition. 
+
+> “The less evidence of extrinsic motivation during art school, the more success in professional art both several years after graduation and nearly twenty years later.” Painters and sculptors who were intrinsically motivated, those for whom the joy of discovery and the challenge of creation were their own rewards, were able to weather the tough times—and the lack of remuneration and recognition—that inevitably accompany artistic careers. And that led to yet another paradox in the Alice in Wonderland world of the third drive. “Those artists who pursued their painting and sculpture more for the pleasure of the activity itself than for extrinsic rewards have produced art that has been socially recognized as superior,” the study said. “It is those who are least motivated to pursue extrinsic rewards who eventually receive them.”
+>
+> - Pink, Daniel H.. Drive (pp. 43-44). Penguin Publishing Group. Kindle Edition. 
+
+> Amabile and others have found that extrinsic rewards can be effective for algorithmic tasks—those that depend on following an existing formula to its logical conclusion. But for more right-brain undertakings—those that demand flexible problem-solving, inventiveness, or conceptual understanding—contingent rewards can be dangerous. Rewarded subjects often have a harder time seeing the periphery and crafting original solutions. This, too, is one of the sturdiest findings in social science—especially as Amabile and others have refined it over the years.10 For artists, scientists, inventors, schoolchildren, and the rest of us, intrinsic motivation—the drive to do something because it is interesting, challenging, and absorbing—is essential for high levels of creativity. But the “if-then” motivators that are the staple of most businesses often stifle, rather than stir, creative thinking. As the economy moves toward more right-brain, conceptual work—as more of us deal with our own versions of the candle problem—this might be the most alarming gap between what science knows and what business does.
+>
+> - Pink, Daniel H.. Drive (pp. 44-45). Penguin Publishing Group. Kindle Edition. 
+
