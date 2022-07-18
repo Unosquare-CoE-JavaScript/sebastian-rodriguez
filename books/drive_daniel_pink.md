@@ -208,3 +208,73 @@ So,
 >
 > - Pink, Daniel H.. Drive (pp. 44-45). Penguin Publishing Group. Kindle Edition. 
 
+##### Good Behavior
+
+> That said, in the Swedish example, the reward itself wasn’t inherently destructive.
+>
+> - Pink, Daniel H.. Drive (p. 47). Penguin Publishing Group. Kindle Edition. 
+
+> What is true is that mixing rewards with inherently interesting, creative, or noble tasks—deploying them without understanding the peculiar science of motivation—is a very dangerous game. When used in these situations, “if-then” rewards usually do more harm than good. By neglecting the ingredients of genuine motivation—autonomy, mastery, and purpose—they limit what each of us can achieve.
+>
+> - Pink, Daniel H.. Drive (p. 47). Penguin Publishing Group. Kindle Edition. 
+
+#### More Of What We Don't Want
+
+> When used improperly, extrinsic motivators can have another unintended collateral consequence: They can give us more of what we don’t want. (...) what science is revealing is that carrots and sticks can promote bad behavior, create addiction, and encourage short-term thinking at the expense of the long view.
+>
+> - Pink, Daniel H.. Drive (pp. 47-48). Penguin Publishing Group. Kindle Edition. 
+
+##### Unethical Behavior
+
+> Goals work. The academic literature shows that by helping us tune out distractions, goals can get us to try harder, work longer, and achieve more.
+>
+> - Pink, Daniel H.. Drive (p. 48). Penguin Publishing Group. Kindle Edition. 
+
+> “Rather than being offered as an ‘over-the-counter’ salve for boosting performance, goal setting should be prescribed selectively, presented with a warning label, and closely monitored,” they wrote. Goals that people set for themselves and that are devoted to attaining mastery are usually healthy. But goals imposed by others—sales targets, quarterly returns, standardized test scores, and so on—can sometimes have dangerous side effects.
+>
+> - Pink, Daniel H.. Drive (p. 48). Penguin Publishing Group. Kindle Edition. 
+
+> As the cadre of business school professors write, “Substantial evidence demonstrates that in addition to motivating constructive effort, goal setting can induce unethical behavior.”
+>
+> - Pink, Daniel H.. Drive (p. 49). Penguin Publishing Group. Kindle Edition. 
+
+> The problem with making an extrinsic reward the only destination that matters is that some people will choose the quickest route there, even if it means taking the low road.
+>
+> - Pink, Daniel H.. Drive (p. 49). Penguin Publishing Group. Kindle Edition. 
+
+> Contrast that approach with behavior sparked by intrinsic motivation. When the reward is the activity itself—deepening learning, delighting customers, doing one’s best—there are no shortcuts. The only route to the destination is the high road. In some sense, it’s impossible to act unethically because the person who’s disadvantaged isn’t a competitor but yourself.
+>
+> - Pink, Daniel H.. Drive (p. 49). Penguin Publishing Group. Kindle Edition. 
+
+> Of course, all goals are not created equal. And—let me emphasize this point—goals and extrinsic rewards aren’t inherently corrupting. But goals are more toxic than Motivation 2.0 recognizes.
+>
+> - Pink, Daniel H.. Drive (p. 49). Penguin Publishing Group. Kindle Edition. 
+
+> “Goals may cause systematic problems for organizations due to narrowed focus, unethical behavior, increased risk taking, decreased cooperation, and decreased intrinsic motivation. Use care when applying goals in your organization.”
+>
+> - Pink, Daniel H.. Drive (p. 50). Penguin Publishing Group. Kindle Edition. 
+
+##### Addiction
+
+> If some scientists believe that “if-then” motivators and other extrinsic rewards resemble prescription drugs that carry potentially dangerous side effects, others believe they’re more like illegal drugs that foster a deeper and more pernicious dependency. According to these scholars, cash rewards and shiny trophies can provide a delicious jolt of pleasure at first, but the feeling soon dissipates—and to keep it alive, the recipient requires ever larger and more frequent doses.
+>
+> - Pink, Daniel H.. Drive (p. 52). Penguin Publishing Group. Kindle Edition. 
+
+> The Russian economist Anton Suvorov has constructed an elaborate econometric model to demonstrate this effect, configured around what’s called “principal-agent theory.” Think of the principal as the motivator—the employer, the teacher, the parent. Think of the agent as the motivatee—the employee, the student, the child. A principal essentially tries to get the agent to do what the principal wants, while the agent balances his own interests with whatever the principal is offering. Using a blizzard of complicated equations that test a variety of scenarios between principal and agent, Suvorov has reached conclusions that make intuitive sense to any parent who’s tried to get her kids to empty the garbage.
+>
+> By offering a reward, a principal signals to the agent that the task is undesirable. (If the task were desirable, the agent wouldn’t need a prod.) But that initial signal, and the reward that goes with it, forces the principal onto a path that’s difficult to leave. Offer too small a reward and the agent won’t comply. But offer a reward that’s enticing enough to get the agent to act the first time, and the principal “is doomed to give it again in the second.” There’s no going back. Pay your son to take out the trash—and you’ve pretty much guaranteed the kid will never do it again for free. What’s more, once the initial money buzz tapers off, you’ll likely have to increase the payment to continue compliance.
+>
+> As Suvorov explains, “Rewards are addictive in that once offered, a contingent reward makes an agent expect it whenever a similar task is faced, which in turn compels the principal to use rewards over and over again.” And before long, the existing reward may no longer suffice. It will quickly feel less like a bonus and more like the status quo—which then forces the principal to offer larger rewards to achieve the same effect.
+>
+> - Pink, Daniel H.. Drive (pp. 52-53). Penguin Publishing Group. Kindle Edition. s
+
+> The mechanism of most addictive drugs is to send a fusillade of dopamine to the nucleus accumbens. The feeling delights, then dissipates, then demands another dose. In other words, if we watch how people’s brains respond, promising them monetary rewards and giving them cocaine, nicotine, or amphetamines look disturbingly similar.
+>
+> - Pink, Daniel H.. Drive (pp. 53-54). Penguin Publishing Group. Kindle Edition. 
+
+>In short, while that dangled carrot isn’t all bad in all circumstances, in some instances it operates similar to a rock of crack cocaine and can induce behavior similar to that found around the craps table or roulette wheel—not exactly what we hope to achieve when we “motivate” our teammates and coworkers.
+>
+> - Pink, Daniel H.. Drive (p. 54). Penguin Publishing Group. Kindle Edition. 
+
+##### Short-Term Thinking
+

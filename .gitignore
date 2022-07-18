@@ -4,3 +4,5 @@ coverage
 .trunk
 .markdownlint.yaml
 .DS_Store
+
+books/*.html
