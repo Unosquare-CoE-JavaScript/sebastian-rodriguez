@@ -278,3 +278,43 @@ So,
 
 ##### Short-Term Thinking
 
+> Many times a concentrated focus makes sense. If your office building is on fire, you want to find an exit immediately rather than ponder how to rewrite the zoning regulations. But in less dramatic circumstances, fixating on an immediate reward can damage performance over time. Indeed, what our earlier examples—unethical actions and addictive behavior—have in common, perhaps more than anything else, is that they’re entirely short-term. Addicts want the quick fix regardless of the eventual harm. Cheaters want the quick win—regardless of the lasting consequences.
+>
+> - Pink, Daniel H.. Drive (p. 55). Penguin Publishing Group. Kindle Edition. 
+
+> Yet even when the behavior doesn’t devolve into shortcuts or addiction, the near-term allure of rewards can be harmful in the long run.
+>
+> - Pink, Daniel H.. Drive (p. 55). Penguin Publishing Group. Kindle Edition. 
+
+> Several researchers have found that companies that spend the most time offering guidance on quarterly earnings deliver significantly lower long-term growth rates than companies that offer guidance less frequently. (One reason: The earnings-obsessed companies typically invest less in research and development.)
+>
+> - Pink, Daniel H.. Drive (pp. 55-56). Penguin Publishing Group. Kindle Edition. 
+
+> “The very presence of goals may lead employees to focus myopically on short-term gains and to lose sight of the potential devastating long-term effects on the organization.”
+>
+> - Pink, Daniel H.. Drive (p. 56). Penguin Publishing Group. Kindle Edition. 
+
+> The short-term prize crowds out the long-term learning.
+>
+> - Pink, Daniel H.. Drive (p. 56). Penguin Publishing Group. Kindle Edition. 
+
+**CARROTS AND STICKS: _The Seven Deadly Flays_**
+![CARROTS AND STICKS: The Seven Deadly Flays](./assets/drive/the-seven-deadly-flaws.png)
+### Chapter 2A. …and the Special Circumstances When They Do
+
+> Carrots and sticks aren’t all bad. If they were, Motivation 2.0 would never have flourished so long or accomplished so much. While an operating system centered around rewards and punishments has outlived its usefulness and badly needs an upgrade, that doesn’t mean we should scrap its every piece. Indeed, doing so would run counter to the science. The scholars exploring human motivation have revealed not only the many glitches in the traditional approach, but also the narrow band of circumstances in which carrots and sticks do their jobs reasonably well. 
+> The starting point, of course, is to ensure that the baseline rewards—wages, salaries, benefits, and so on—are adequate and fair. Without a healthy baseline, motivation of any sort is difficult and often impossible.
+>
+> - Pink, Daniel H.. Drive (p. 58). Penguin Publishing Group. Kindle Edition. 
+
+> Glucksberg’s experiment provides the first question you should ask when contemplating external motivators: Is the task at hand routine? That is, does accomplishing it require following a prescribed set of rules to a specified end? For routine tasks, which aren’t very interesting and don’t demand much creative thinking, rewards can provide a small motivational booster shot without the harmful side effects.
+>
+> - Pink, Daniel H.. Drive (p. 60). Penguin Publishing Group. Kindle Edition.
+
+> (...) when the task called for "even rudimentary cognitive skill," a larger reward "led to poorer performance." But "as long as the task involved only mechanical skill, bonuses worked as they would be expected: the higher the pay, the better the performance."
+>
+> - Pink, Daniel H.. Drive (p. 60). Penguin Publishing Group. Kindle Edition.
+
+> This is extremely important. Although advanced economies now revolve less around those algorithmic, rule-based functions, some of what we do each day—especially on the job—still isn’t all that interesting. We have TPS reports to fill out and boring e-mail to answer and all manner of drudge work that doesn’t necessarily fire our soul. What’s more, for some people, much of what they do all day consists of these routine, not terribly captivating, tasks. In these situations, it’s best to try to unleash the positive side of the Sawyer Effect by attempting to turn work into play—to increase the task’s variety, to make it more like a game, or to use it to help master other skills. Alas, that’s not always possible. And this means that sometimes, even “if-then” rewards are an option.
+>
+> Pink, Daniel H.. Drive (pp. 60-61). Penguin Publishing Group. Kindle Edition. 
