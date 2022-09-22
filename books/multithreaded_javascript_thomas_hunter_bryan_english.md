@@ -259,3 +259,34 @@ a binary-encoded instruction format that runs on a stackbased virtual machine.
 - Emscripten isn’t the only way to compile code to
 WebAssembly. Indeed, WebAssembly was designed
 primarily as a compile target, rather than as a generalpurpose language in its own right.
+
+## Chapter 8. Analysis
+
+- By and large the main reason to add workers to an application is to increase performance. But this trade-off comes with a cost of added complexity. The KISS principle, meaning “Keep It Simple, Stupid,” suggests that your applications should be so stupidly simple that anyone can quickly look at the code and get an understanding of it. Being able to read code after it has been written is of paramount importance and simply adding threads to a program without purpose is an absolute violation of KISS.
+- There are absolutely good reasons to add threads to an application, and as long as you’re measuring performance and confirming that speed gains outweigh added maintenance costs, then you’ve found yourself a situation deserving of threads.
+
+### When Not to Use
+
+- Threading is not a magic bullet capable of solving an application’s performance problems. It is usually not the lowest-hanging fruit when it comes to performance, either,and should often be done as a final effort. This is particularly true in JavaScript, where multithreading isn’t as widely understood by the community as other languages. Adding threading support may require heavy changes to an application, which means your effort-to-performance gains will likely be higher if you first hunt down other code inefficiencies first.
+
+#### Low Memory Constraints
+
+- There is some additional memory overhead incurred when instantiating multiple threads in JavaScript. This is because the browser needs to allocate additional memory for the new JavaScript environment—this includes things like globals and APIs available to your code as well as under-the-hood memory used by the engine itself.
+- There are two important variables here used to measure the memory usage of a program, both of them measured in kilobytes. The first here is VSZ, or virtual memory size, which is the memory the process can access including swapped memory, allocated memory, and even memory used by shared libraries (such as TLS). The next is RSS, or resident set size, which is the amount of physical memory currently being used by the process.
+
+#### Low Core Count
+
+- Your application will run slower in situations where it has fewer cores. This is especially true if the machine has a single core, and it can also be true if it has two cores. Even if you employ a thread pool in your application and scale the poolbased on the core count, the application will be slower if it creates a single worker thread.
+
+#### Containers Versus Threads
+
+- When it comes to writing server software, like with Node.js, the rule of thumb is that processes should scale horizontally.
+- This is a fancy term meaning you should run multiple redundant versions of the program in an isolated manner —such as within a Docker container.
+- Horizontal scaling benefits performance in a way that allows developers to fine-tune the performance of the whole fleet of applications.
+
+### When to Use
+
+- Embarrassingly parallel
+- Heavy math
+- MapReduce-friendly problems
+- Graphics processing
