@@ -138,3 +138,38 @@ worker threads and allocating tasks to them. The name of
 the module comes from the Italian word for "pool."
 - All programming is about trade-offs. Multithreaded
 programming is no exception. In fact, you’ll find tradeoffs at every turn. Sacrificing convenience in one place will often give you performance gains elsewhere, or viceversa. Sometimes if one operation is slightly slower, another will be significantly faster.
+
+## Chapter 4. Shared Memory
+
+- While it’s true they allow you to run code in parallel, you’ve only done so using message-passing APIs, ultimately depending on the familiar event loop to handle the receipt of a message.
+- The Atomics object and the SharedArrayBuffer class allow you to share memory between two threads without depending on message passing.
+- In the wrong hands, the tools covered here can be dangerous, introducing logic-defying bugs to your application that slither in the shadows during development only to rear their heads in production. But when honed and used properly, these tools allow your application to soar to new heights, squeezing never-before-seen levels of performance from your hardware.
+
+### SharedArrayBuffer and TypedArrays
+
+- Traditionally the JavaScript language didn’t really support interaction with binary data. Sure, there were strings, but they really abstracted the underlying data storage mechanism. There were also arrays, but those can contain values of any type and aren’t appropriate for representing binary buffers. For many years that was sort of “good enough,” especially before the advent of Node.js and the popularity of running JavaScript outside of a web page context took off.
+- It allows applications to share memory across
+threads.
+- Just in case you haven’t had experience with it, binary is a system of counting that is 2 based, which at the lowest level is represented as 1s and 0s. Each of these numbers is referred to as a bit. Decimal, the system humans mostly use for counting, is 10 based and is represented with numerals from 0 to 9. A combination of 8 bits is referred to as a byte and is often the smallest addressable value in memory since it’s usually easier to deal with than individual bits. Basically, this means CPUs (and programmers) work with bytes instead of individual bits.
+  - Given an arbitrary set of bytes that is stored on disk, or even in a computer’s memory, it’s a little ambiguous what the data means. For example, what might the hexadecimal value 0x54 (the 0x prefix in JavaScript means the value is in hexadecimal) represent? Well, if it’s part of a string, it might mean the capital letter T. However, if it represents an integer, it might mean the decimal number 84. It might even refer to a memory location, part of a pixel in a JPEG image, or any other number of things. The context here is very important. That same number, represented in binary, looks like 0b01010100 (the 0b prefix represents binary).
+- Keeping this ambiguity in mind, it’s also important to mention that the contents of an ArrayBuffer (and SharedArrayBuffer) can’t be directly modified. Instead, a “view” into the buffer must first be created. Also, unlike other languages which might provide access to abandoned memory, when an ArrayBuffer in JavaScript is instantiated the contents of the buffer are initialized to 0. Considering these buffer objects only store numeric data, they truly are a very elementary tool for data storage, one that more complicated systems are often built upon.
+- The term view has been mentioned in a few places, and now is a good time to define it. Due to the ambiguity of what binary data can mean, we need to use a view to read and write to the underlying buffer. There are several of these views available in JavaScript. Each of these views extends from a base class called TypedArray. This class can’t be instantiated directly and isn’t available as a global, but it can be accessed by grabbing the .prototype property from an instantiated child class.
+
+### Atomic Methods for Data Manipulation
+
+- Atomicity is a term that you might have heard before, particularly when it comes to databases, where it’s the first word in the acronym ACID (atomicity, consistency, isolation, durability).
+- Essentially, if an operation is atomic, it means that while the overall operation may be composed of multiple smaller steps, the overall operation is guaranteed to either entirely succeed or entirely fail. For example, a single query sent to a database is going to be atomic, but three separate queries aren’t atomic.
+  - if those three queries are wrapped in a database transaction, then the whole lot becomes atomic; either all three queries run successfully, or none run successfully. It’s also important that the operations are executed in a particular order, assuming they manipulate the same state or otherwise have any side effects than can affect each other. The isolation part means that other operations can’t run in the middle; for example, a read can’t occur when only some of the operations have been applied.
+- JavaScript provides a global object named Atomics with several static methods available on it. This global follows the same pattern as the familiar Math global. In either case you can’t use the new operator to create a new instance, and the available methods are stateless, not affecting the global itself. Instead, with Atomics, they’re used by passing in a reference to the data that is to be modified.
+
+### Atomicity Concerns
+
+- Essentially, when using Atomics calls, there’s an implicit lock in place to make interactions convenient.
+- Sadly, not all of the operations you’ll need to perform with shared memory can be
+represented using the Atomics methods. When that happens you’ll need to come up with a more manual locking mechanism, allowing you to read and write freely and preventing other threads from doing so.
+
+### Data Serialization
+
+- Buffers are extremely powerful tools. That said, working with them from an entirely numeric point of view can start to get a little difficult. Sometimes you’ll need to store things that represent nonnumeric data using a buffer. When this happens you’ll need to serialize that data in some manner before writing it to the buffer, and you’ll later need to deserialize it when reading from the buffer.
+- An API is available to modern JavaScript for encoding and decoding strings directly to ArrayBuffer instances. This API is provided by the globals TextEncoder and TextDecoder, both of which are constructors and are globally available in modern JavaScript environments including browsers and Node.js. These APIs encode and decode using the UTF-8 encoding due to its ubiquity.
+- The performance trade-offs when communicating between threads is not usually due to the size of the payload being transferred, but is more than likely due to the cost of serializing and deserializing payloads.
