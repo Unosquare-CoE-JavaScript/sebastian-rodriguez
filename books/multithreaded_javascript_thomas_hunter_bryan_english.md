@@ -33,4 +33,53 @@
 - We need to ensure that some events are properly synchronized so that weird errors don’t occur.
 - When adding threads to your code in any language, it’s worth making sure that the use is appropriate. Also, as with any exercise in attempting to make faster programs, always be measuring. You don’t want to have the complexity of threaded code in your application if it doesn’t turn out to give you any actual benefit.
 - Any programming language supporting threads is going to provide some mechanisms for creating and destroying threads, passing messages in between, and interacting with data that’s shared between the threads.
-- 
+
+## Chapter 2. Browsers
+
+- Javascript have many different implementations and not every engine implements JS the same way.
+
+### Dedidated Workers
+
+- Web workers allow u to spawn a new environment for executing Javascript.
+  - Communication occurs using a patter called *message passing*
+- Web workers can even spawn new web workers
+
+### Shared Workers
+
+- Hard to debug
+- Not fully implemented (Safari don't enable it)
+- Should be named and have multiple instances of the same shared workers
+
+### Service Worker
+
+- A service worker functions as a sort of proxy that sits
+between one or more web pages running in the browser
+and the server.
+- A service worker isn’t associated
+with just a single web page but potentially multiple pages,
+it’s more similar to a shared worker than to a dedicated
+worker.
+- **A service worker can exist and run in
+the background even when a page isn’t necessarily still
+open.**
+- Service workers are primarily intended for performing
+cache management of a website or a single page
+application. They are most commonly invoked when
+network requests are sent to the server, wherein an event
+handler inside the service worker intercepts the network
+request.
+- **The service worker’s claim to fame is that it can be
+used to return cached assets when a browser displays a
+web page but the computer it’s running on no longer has
+network access.**
+- Browsers will only allow service workers to run on
+a web page that has been served using the HTTPS protocol.
+- Service workers are intended to only be used for
+performing asynchronous operations.
+- It’s also possible to pass messages into, andreceive messages from, a service worker.
+
+#### CROSS-DOCUMENT COMMUNICATION
+
+- Iframes
+- Pop-up window
+- BroadcastChannel API -> Pub/Sub Approach
