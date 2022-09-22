@@ -83,3 +83,26 @@ performing asynchronous operations.
 - Iframes
 - Pop-up window
 - BroadcastChannel API -> Pub/Sub Approach
+
+### Message Passing Abstractions
+
+- Each of the web workers covered in this chapter expose an
+interface for passing messages into, and receiving
+messages from, a separate JavaScript environment. This
+allows you to build applications that are capable of running
+JavaScript simultaneously across multiple cores.
+
+#### The RPC Pattern
+
+- The way to send multiple messages to a worker to do multiple things and get the answers in a correct way though IDs
+  - A inplementation can be the JSON-RPC
+
+#### The Command Dispatcher Pattern
+
+- While the RPC pattern is useful for defining protocols, it
+doesn’t necessarily provide a mechanism for determining
+what code path to execute on the receiving end.
+- The command dispatcher pattern solves this, providing a way to
+take a serialized command, find the appropriate function,
+and then execute it, optionally passing in arguments.
+- 
