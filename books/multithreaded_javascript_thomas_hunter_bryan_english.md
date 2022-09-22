@@ -199,3 +199,46 @@ cases it is.
 - Don’t use Atomics.wait() in the main thread.
 - Designate which threads are CPU-heavy and use lots of Atomics calls and which threads are evented.
 - Consider using simple “bridge” threads to wait and post messages where appropriate.
+
+## Chapter 6. Multithreaded Patterns
+
+- Just looking at such abstract and low-level APIs can make it difficult to see the big picture, or what these APIs can really be used for. It’s admittedly difficult to take these concepts and convert them into something that is genuinely useful for an application. That’s what this chapter is for.
+
+### Thread Pool
+
+- The thread pool is a very popular pattern that is used in most multithreaded applications in some form or another. Essentially, a thread pool is a collection of homogeneous worker threads that are each capable of carrying out CPU-intensive tasks that the application may depend on.
+- This pattern might feel similar to distributed systems that you may have worked with in the past. For example, with a container orchestration platform, there’s usually a collection of machines that are each capable of running application containers. With such a system each machine might have different capabilities, such as running different operating systems or having different memory and CPU resources. When this happens, the orchestrator may assign points to each machine based on resources and applications, then consume said points. On the other hand, a thread pool is much simpler because each worker is capable of carrying out the same work and each thread is just as capable as the other since they’re all running on the same machine.
+
+#### Pool Size
+
+- There are essentially two types of programs: those that run in the background, like a system daemon process, which ideally shouldn’t consume that many resources, and programs that run in the foreground that any given user is more likely to be aware of, like a desktop application or a web server.
+- The number of CPU cores available to the machine should be a determining factor for the number of threads—aka workers—an application should use.
+- Typically, the size of a thread pool won’t need to dynamically change throughout the lifetime of an application. Usually there’s a reason the number of workers is chosen, and that reason doesn’t often change. That’s why you’ll work with a thread pool with a fixed size, dynamically chosen when the application launches.
+- One thing to keep in mind is that with most operating systems there is not a direct correlation between a thread and a CPU core.
+- Each time a CPU core switches focus between programs—or threads of a program—a small context shift overhead comes into play. Because of this, having too many threads compared to the number of CPU cores can cause a loss of performance. The constant context switching will actually make an application slower, so applications should attempt to reduce the number of threads clamoring for attention from the OS. However, having too few threads can then mean that an application takes too long to do its thing, resulting in a poor user experience or otherwise wasted hardware.
+- Another thing to keep in mind is that if an application makes a thread pool with four workers, then the minimum number of threads that application is using is five because the main thread of the application also comes into play. There are also background threads to consider, like the libuv thread pool, a garbage collection thread if the JavaScript engine employs one, the thread used to render the browser chrome, and so on. All of these will affect the performance of the application.
+- **The characteristics of the application itself will also affect the ideal size of a thread pool. Are you writing a cryptocurrency miner that does 99.9% of the work in each thread and almost no I/O and no work in the main thread? In that case using the number of available cores as the size of the thread pool might be OK. Or are you writing a video streaming and transcoding service that performs heavy CPU and heavy I/O? In that case, you may want to use the number of available cores minus two. You’ll need to perform benchmarks with your application to find the perfect number, but a reasonable starting point might be to use the number of available cores minus one and then tweak when necessary.**
+
+#### Dispatch Strategies
+
+- Round Robin
+- Random
+- Least busy
+
+- Depending on the nature of your application, you may find that one of these strategies offers much better performance than the others. Again, benchmarking is your friend when it comes to measuring a given application’s performance.
+
+### Mutex: A Basic Lock
+
+- A mutually exclusive lock, or mutex, is a mechanism for controlling access to some shared data. It ensures that only one task may use that resource at any given time. Here, a task can mean any sort of concurrent task, but most often the concept is used when working with multiple threads, to avoid race conditions. A task acquires the lock in order to run code that accesses the shared data, and then releases the lock once it’s done. The code between the acquisition and the release is called the critical section. If a task attempts to acquire the lock while another task has it, that task will be blocked until the other task releases the lock.
+- **SEMAPHORES:** The element in the shared array that we use to represent the state of being locked or unlocked is a trivial example of a semaphore. Semaphores are variables used to convey state information between threads. They indicate a count of a resource being used. In the case of a mutex, we limit this to 1, but semaphores in other scenarios may involve other limits for other purposes.
+
+### Streaming Data with Ring Buffers
+
+- A ring buffer is an implementation of a first-in-first-out (FIFO) queue, implemented using a pair of indices into an array of data in memory. Crucially, for efficiency, when data is inserted into the queue, it won’t ever move to another spot in memory. Instead, we move the indices around as data gets added to or removed from the queue. The array is treated as if one end is connected to the other, creating a ring of data. This means that if these indices are incremented past the end of the array, they’ll go back to the beginning.
+
+### Actor Model
+
+- With this model an actor is a primitive container that allows for executing code. An actor is capable of running logic, creating more actors, sending messages to other actors, and receiving messages.
+- These actors communicate with the outside world by way of message passing; otherwise, they have their own isolated access to memory. An actor is a first-class citizen in the Erlang programming language, but it can certainly be emulated using JavaScript.
+- The actor model is designed to allow computations to run in a highly parallelized manner without necessarily having to worry about where the code is running or even the protocol used to implement the communication. Really, it should be transparent to program code whether one actor communicates with another actor locally or remotely.
+- 
