@@ -241,4 +241,21 @@ cases it is.
 - With this model an actor is a primitive container that allows for executing code. An actor is capable of running logic, creating more actors, sending messages to other actors, and receiving messages.
 - These actors communicate with the outside world by way of message passing; otherwise, they have their own isolated access to memory. An actor is a first-class citizen in the Erlang programming language, but it can certainly be emulated using JavaScript.
 - The actor model is designed to allow computations to run in a highly parallelized manner without necessarily having to worry about where the code is running or even the protocol used to implement the communication. Really, it should be transparent to program code whether one actor communicates with another actor locally or remotely.
-- 
+
+## Chapter 7. WebAssembly
+
+- For the unaware, WebAssembly (often abbreviated as WASM) is
+a binary-encoded instruction format that runs on a stackbased virtual machine.
+- It’s designed with security in mind and runs in a sandbox where the only things it has access to are memory and functions provided by the host environment. The main motivation behind having such a thing in browsers and other JavaScript runtimes is to run the parts of your program that are performance-sensitive in an environment where execution can happen much faster than JavaScript.
+- With SharedArrayBuffers, atomic operations, and web workers (or worker_threads in Node.js), we have enough to do the full suite of multithreaded programming tasks using WebAssembly.
+- Hand-writing WebAssembly in WAT, while clearly possible, isn’t usually the easiest path to being productive and getting performance gains with it. It was designed to be a compile target for higher-level languages, and that’s where it really shines.
+
+### Compiling C Programs to WebAssembly with Emscripten
+
+- Since long before WebAssembly, Emscripten has been the go-to way to compile C and C++ programs for use in JavaScript environments. Today, it supports multithreaded C and C++ code using web workers in browsers and worker_threads in Node.js.
+
+### Other WebAssembly Compilers
+
+- Emscripten isn’t the only way to compile code to
+WebAssembly. Indeed, WebAssembly was designed
+primarily as a compile target, rather than as a generalpurpose language in its own right.
