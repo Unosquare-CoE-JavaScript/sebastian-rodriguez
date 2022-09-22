@@ -173,3 +173,29 @@ represented using the Atomics methods. When that happens you’ll need to come u
 - Buffers are extremely powerful tools. That said, working with them from an entirely numeric point of view can start to get a little difficult. Sometimes you’ll need to store things that represent nonnumeric data using a buffer. When this happens you’ll need to serialize that data in some manner before writing it to the buffer, and you’ll later need to deserialize it when reading from the buffer.
 - An API is available to modern JavaScript for encoding and decoding strings directly to ArrayBuffer instances. This API is provided by the globals TextEncoder and TextDecoder, both of which are constructors and are globally available in modern JavaScript environments including browsers and Node.js. These APIs encode and decode using the UTF-8 encoding due to its ubiquity.
 - The performance trade-offs when communicating between threads is not usually due to the size of the payload being transferred, but is more than likely due to the cost of serializing and deserializing payloads.
+
+## Chapter 5. Advanced Shared Memory
+
+- Although the basic operations provided by Atomics are convenient, you will often find yourself needing to perform more complex interactions with that data.
+
+### Atomic Methods for Coordination
+
+- As far as prior art goes, these methods are modeled after a feature available in the Linux kernel called the futex, which is short for fast userspace mutex.
+- Mutex itself is short for mutual exclusion, which is when a single thread of execution gets exclusive access to a particular piece of data. A mutex can also be referred to as a lock, where one thread locks access to the data, does its thing, and then unlocks access, allowing another thread to then touch the data.
+- A futex is built on two basic operations, one being “wait” and the other being “wake.”
+- This blocking behavior might be a little shocking at first.
+Locking an entire thread sounds a bit intense, and in many
+cases it is.
+- Multiple threadscan be frozen at the same time, each waiting to be notified. The count value then determines how many of them to awaken.
+
+### Timing and Nondeterminism
+
+- In order for an application to be correct it usually needs to behave in a deterministic fashion. The Atomics.notify() function accepts an argument count that contains the number of threads to wake up. The glaring question in this situation is which threads get woken up and in which order?
+- Threads are woken up in FIFO (first in, first out) order, meaning the first thread that called Atomics.wait() is the first to be woken up, the second to call is the second to be woken up, and so on.
+- Another thing to keep in mind is that the speed that it takes to initialize threads will also likely depend on the number of cores available on your computer.
+
+### Atomics and Events
+
+- Don’t use Atomics.wait() in the main thread.
+- Designate which threads are CPU-heavy and use lots of Atomics calls and which threads are evented.
+- Consider using simple “bridge” threads to wait and post messages where appropriate.
