@@ -105,4 +105,36 @@ what code path to execute on the receiving end.
 - The command dispatcher pattern solves this, providing a way to
 take a serialized command, find the appropriate function,
 and then execute it, optionally passing in arguments.
-- 
+
+## Chapter 3. Node.js
+
+- Prior to threads being available in Node.js, if you wanted to
+take advantage of CPU cores, you needed to use processes.
+
+### The worker_threads Module
+
+- Node.js’s support for threads is in a built-in module called
+worker_threads. It provides an interface to threads that
+mimics a lot of what you’d find in web browsers for webworkers.
+- You can have memory that’s shared between threads via
+SharedArrayBuffer.
+
+#### MessagePort
+
+- A MessagePort is one end of a two-way data stream. By
+default, one is provided to every worker thread to provide a
+communication channel to and from the main thread. It’s
+available in the worker thread as the parentPort property
+of the worker_threads module.
+
+### Worker Pools with Piscina
+
+- The concept of pooled resources isn’t unique to threads. For
+example, web browsers typically create pools of socket connections to web servers so that they can multiplex all the various HTTP requests required to render a web page across those connections. Database client libraries often do a similar thing with sockets connected to the database server.
+- For the use case of discrete tasks sent to a pool of worker
+threads, we have the piscina module at our disposal. This
+module encapsulates the work of setting up a bunch of
+worker threads and allocating tasks to them. The name of
+the module comes from the Italian word for "pool."
+- All programming is about trade-offs. Multithreaded
+programming is no exception. In fact, you’ll find tradeoffs at every turn. Sacrificing convenience in one place will often give you performance gains elsewhere, or viceversa. Sometimes if one operation is slightly slower, another will be significantly faster.

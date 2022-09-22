@@ -1,0 +1,16 @@
+{
+  "name": "happycoin-piscina",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.mjs",
+  "type": "module",
+  "scripts": {
+    "serve": "node index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "piscina": "^3.2.0"
+  }
+}
