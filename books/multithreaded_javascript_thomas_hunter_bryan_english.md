@@ -290,3 +290,15 @@ primarily as a compile target, rather than as a generalpurpose language in its o
 - Heavy math
 - MapReduce-friendly problems
 - Graphics processing
+
+### Summary of Caveats
+
+- Complexity
+- Memory overhead
+- No shared objects
+- No DOM access
+- Modified APIs
+- Structured clone algorithm constraints
+- Browsers require special headers
+- Thread preparedness detection
+- 
